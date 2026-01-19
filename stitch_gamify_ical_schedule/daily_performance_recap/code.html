@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily Performance Recap</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eebd2b",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221d10",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .rank-glow {
+            text-shadow: 0 0 20px rgba(238, 189, 43, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-slate-900 dark:text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col max-w-[480px] mx-auto overflow-x-hidden border-x border-primary/10">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="text-slate-900 dark:text-white flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined cursor-pointer">close</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center font-display">Daily Recap</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-slate-900 dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<!-- Grade/Rank Section -->
+<div class="flex flex-col items-center justify-center pt-8 pb-4">
+<div class="relative">
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
+<h1 class="text-primary tracking-tighter text-[84px] font-extrabold leading-none rank-glow relative z-10 italic">S-RANK</h1>
+</div>
+<div class="mt-2">
+<p class="text-primary text-sm font-bold uppercase tracking-widest bg-primary/10 px-4 py-1 rounded-full border border-primary/20">Efficiency Elite</p>
+</div>
+</div>
+<!-- Headline & Meta -->
+<div class="px-4 text-center">
+<h1 class="text-slate-900 dark:text-white tracking-light text-[28px] font-bold leading-tight pt-2">Morning Warrior</h1>
+<p class="text-slate-500 dark:text-[#c9bb92] text-sm font-normal leading-normal pb-6 pt-1">You dominated your calendar today, Warrior!</p>
+</div>
+<!-- Loot Summary (Stats Component) -->
+<div class="px-4">
+<div class="flex flex-wrap gap-3">
+<div class="flex min-w-[140px] flex-1 flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#483f23] shadow-sm border border-slate-200 dark:border-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">military_tech</span>
+<p class="text-slate-600 dark:text-white text-sm font-medium leading-normal">Total XP</p>
+</div>
+<p class="text-slate-900 dark:text-white tracking-light text-2xl font-bold leading-tight">1,200 XP</p>
+<p class="text-[#0bda1d] text-sm font-bold leading-normal">+150 Bonus</p>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-2 rounded-xl p-5 bg-white dark:bg-[#483f23] shadow-sm border border-slate-200 dark:border-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">database</span>
+<p class="text-slate-600 dark:text-white text-sm font-medium leading-normal">Gold Gained</p>
+</div>
+<p class="text-slate-900 dark:text-white tracking-light text-2xl font-bold leading-tight">45 Gold</p>
+<p class="text-[#0bda1d] text-sm font-bold leading-normal">+10 Streak</p>
+</div>
+</div>
+</div>
+<!-- Performance Trends -->
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-8">Today vs. Yesterday</h3>
+<div class="px-4 space-y-3">
+<div class="flex items-center justify-between p-4 bg-white dark:bg-[#2d281a] rounded-xl border border-slate-200 dark:border-primary/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">task_alt</span>
+</div>
+<div>
+<p class="text-sm font-medium text-slate-500 dark:text-[#c9bb92]">Tasks Completed</p>
+<p class="text-lg font-bold text-slate-900 dark:text-white">12 Quests</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-[#0bda1d] font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>10%</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-white dark:bg-[#2d281a] rounded-xl border border-slate-200 dark:border-primary/10">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">timer</span>
+</div>
+<div>
+<p class="text-sm font-medium text-slate-500 dark:text-[#c9bb92]">Focus Time</p>
+<p class="text-lg font-bold text-slate-900 dark:text-white">4h 20m</p>
+</div>
+</div>
+<div class="flex items-center gap-1 text-red-500 font-bold">
+<span class="material-symbols-outlined text-sm">trending_down</span>
+<span>5m</span>
+</div>
+</div>
+</div>
+<!-- Efficacy Insight Card -->
+<div class="px-4 pt-8 pb-4">
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#eebd2b] to-[#b88a00] p-[1px]">
+<div class="bg-background-light dark:bg-background-dark rounded-[15px] p-5">
+<div class="flex items-start gap-3">
+<div class="mt-1 flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-3xl">lightbulb</span>
+</div>
+<div>
+<h4 class="text-slate-900 dark:text-white font-bold text-lg leading-tight">Efficacy Insight</h4>
+<p class="text-slate-600 dark:text-[#c9bb92] text-sm mt-1 leading-relaxed">
+                                You were most efficient between <span class="text-primary font-bold">10 AM and 12 PM</span>. You tackled your hardest quests with zero distractions. You're a true Morning Warrior!
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeline Summary -->
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Daily Breakdown</h3>
+<div class="px-4 pb-24">
+<div class="space-y-4 pt-2">
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-3 h-3 rounded-full bg-primary mt-1.5"></div>
+<div class="w-0.5 h-full bg-primary/20"></div>
+</div>
+<div class="pb-6">
+<p class="text-xs font-bold text-primary uppercase">09:00 AM</p>
+<p class="text-slate-900 dark:text-white font-bold">Inbox Zero Quest</p>
+<p class="text-slate-500 dark:text-[#c9bb92] text-sm">Completed in 15 mins (+50 XP)</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-3 h-3 rounded-full bg-primary mt-1.5"></div>
+<div class="w-0.5 h-full bg-primary/20"></div>
+</div>
+<div class="pb-6">
+<p class="text-xs font-bold text-primary uppercase">10:30 AM</p>
+<p class="text-slate-900 dark:text-white font-bold">Project Deep Dive</p>
+<p class="text-slate-500 dark:text-[#c9bb92] text-sm">Deep Work state achieved for 90 mins</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action Bar (Sticky) -->
+<div class="fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto p-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-t border-primary/10">
+<button class="w-full bg-primary text-black font-extrabold py-4 rounded-xl shadow-lg shadow-primary/20 active:scale-95 transition-transform flex items-center justify-center gap-2">
+                COMPLETE DAY
+                <span class="material-symbols-outlined">auto_awesome</span>
+</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eebd2b",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221d10",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .confetti-gradient {
+            background: radial-gradient(circle at center, rgba(238, 189, 43, 0.15) 0%, transparent 70%);
+        }
+        .glow-effect {
+            box-shadow: 0 0 40px rgba(238, 189, 43, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<div class="relative flex w-full flex-col">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined text-white/50">close</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Quest Victory</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-full h-12 bg-transparent text-white">
+<span class="material-symbols-outlined text-primary">info</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col items-center px-6 overflow-y-auto pb-24 relative">
+<!-- Confetti/Glow Background -->
+<div class="absolute inset-0 confetti-gradient pointer-events-none"></div>
+<!-- Headline Section -->
+<div class="w-full text-center z-10">
+<h1 class="text-white tracking-light text-[36px] font-extrabold leading-tight pt-8 pb-1 uppercase italic">Quest Complete!</h1>
+<h2 class="text-primary text-xl font-bold leading-tight tracking-widest uppercase pb-6">Project Slain!</h2>
+</div>
+<!-- Central Illustration: Glowing Chest -->
+<div class="w-full max-w-[320px] aspect-square relative flex items-center justify-center z-10 my-4">
+<div class="absolute inset-0 bg-primary/20 blur-[80px] rounded-full"></div>
+<div class="w-full h-full bg-center bg-no-repeat bg-contain relative z-20" data-alt="A glowing golden treasure chest opening with light rays" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDgu2wpszS4ho6VKPBZvzJb_cxH0KqtUzCtHGZWaynfksYnLbb5clmQ4NaPlfB8qzz8AfxCfbxwU81LaQYFcqdJR5CWGEWBgzFWkih5o0kdRPKh4iH6GqQAprAXzhnCKXjRDwX_y71aVbogiOO9AVX1-mk4iUr2j-lOH1JdvrromOCQY8kAaAsKogth7ciyUPyRveJdRxqR-hLjeK6v-xYeAU072mvWAH1iNjzp3SpFOl-8AgbghH1EIZzFm7QJepoOn2urKKHrhio");'>
+</div>
+</div>
+<!-- Reward Grid -->
+<div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 z-10">
+<div class="flex flex-1 gap-3 rounded-xl border border-primary/30 bg-primary/10 p-4 items-center justify-center backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">stars</span>
+<h2 class="text-white text-base font-bold leading-tight">+500 XP</h2>
+</div>
+<div class="flex flex-1 gap-3 rounded-xl border border-primary/30 bg-primary/10 p-4 items-center justify-center backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">database</span>
+<h2 class="text-white text-base font-bold leading-tight">+50 Gold</h2>
+</div>
+<div class="flex flex-1 gap-3 rounded-xl border border-primary/30 bg-primary/10 p-4 items-center justify-center backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">military_tech</span>
+<h2 class="text-white text-base font-bold leading-tight">Rare Badge</h2>
+</div>
+</div>
+<!-- Level Up Section -->
+<div class="w-full mt-6 px-4 z-10">
+<div class="bg-white/5 border border-white/10 rounded-xl p-5 relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary text-background-dark font-bold px-4 py-1 rounded-bl-xl text-xs uppercase tracking-tighter">
+                    Level Up!
+                </div>
+<div class="flex justify-between items-end mb-2">
+<div>
+<p class="text-white/60 text-xs uppercase font-bold tracking-widest">Current Rank</p>
+<p class="text-white text-xl font-bold">Grandmaster <span class="text-primary">Lvl 15</span></p>
+</div>
+<p class="text-primary font-bold text-sm">2,450 / 2,500 XP</p>
+</div>
+<div class="w-full h-3 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary glow-effect rounded-full" style="width: 92%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Actions -->
+<div class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-dark via-background-dark to-transparent z-30">
+<div class="max-w-md mx-auto flex flex-col gap-3">
+<button class="w-full py-4 bg-primary text-background-dark font-bold text-lg rounded-full shadow-lg shadow-primary/20 active:scale-95 transition-transform flex items-center justify-center gap-2">
+                Claim Rewards
+                <span class="material-symbols-outlined">auto_awesome</span>
+</button>
+<button class="w-full py-4 bg-white/5 text-white font-bold text-lg rounded-full border border-white/10 active:scale-95 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-primary">share</span>
+                Share Victory
+            </button>
+</div>
+</div>
+<!-- Decorative Floating Elements (Confetti) -->
+<div class="fixed top-20 left-10 text-primary/40 rotate-12 pointer-events-none">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1">celebration</span>
+</div>
+<div class="fixed top-40 right-10 text-primary/30 -rotate-12 pointer-events-none">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1">bolt</span>
+</div>
+<div class="fixed bottom-40 left-5 text-primary/20 rotate-45 pointer-events-none">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1">grade</span>
+</div>
+</body></html>

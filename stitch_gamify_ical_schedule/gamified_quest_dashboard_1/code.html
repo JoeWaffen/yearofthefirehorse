@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pet Evolution &amp; Mastery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#0a140d",
+                        "fitness": "#ef4444",
+                        "coding": "#3b82f6",
+                        "focus": "#a855f7",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .mystical-habitat {
+            background: radial-gradient(circle at center, #1a3a24 0%, #0a140d 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .mystical-habitat::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background-image: radial-gradient(circle, #13ec5b 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.1;
+            transform: rotate(15deg);
+        }
+        .skill-orb-glow {
+            filter: drop-shadow(0 0 8px currentColor);
+        }
+        .floating-pet {
+            animation: idle-float 4s ease-in-out infinite;
+        }
+        @keyframes idle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .energy-line {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 100;
+            opacity: 0.4;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display text-white selection:bg-primary/30 overflow-hidden">
+<div class="relative flex h-screen w-full flex-col overflow-hidden mystical-habitat">
+<header class="z-30 p-6 flex justify-between items-center">
+<div>
+<h1 class="text-2xl font-bold tracking-tight">Pet Evolution</h1>
+<div class="flex items-center gap-2 mt-1">
+<span class="text-xs font-bold text-primary uppercase tracking-widest">Hatchling Phase</span>
+<span class="w-1 h-1 rounded-full bg-white/30"></span>
+<span class="text-xs text-[#92c9a4]">Data Dragon</span>
+</div>
+</div>
+<div class="bg-white/5 border border-white/10 rounded-full px-4 py-2 flex items-center gap-2 ios-blur">
+<span class="material-symbols-outlined text-yellow-500 text-sm">stars</span>
+<span class="text-sm font-bold">LV. 8</span>
+</div>
+</header>
+<main class="flex-1 relative flex flex-col items-center justify-center -mt-10">
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<svg class="absolute w-full h-full opacity-30">
+<line class="energy-line" stroke="#ef4444" stroke-width="2" x1="20%" x2="50%" y1="30%" y2="50%"></line>
+<line class="energy-line" stroke="#3b82f6" stroke-width="2" x1="80%" x2="50%" y1="35%" y2="50%"></line>
+<line class="energy-line" stroke="#a855f7" stroke-width="2" x1="50%" x2="50%" y1="75%" y2="50%"></line>
+</svg>
+<div class="absolute top-[25%] left-[15%] flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full border-2 border-fitness/30 bg-fitness/10 flex items-center justify-center skill-orb-glow text-fitness">
+<div class="absolute inset-0 rounded-full bg-fitness/20 animate-pulse"></div>
+<span class="material-symbols-outlined text-2xl fill-[1]">fitness_center</span>
+</div>
+<span class="text-[10px] font-black uppercase tracking-tighter text-fitness">Fitness</span>
+</div>
+<div class="absolute top-[30%] right-[10%] flex flex-col items-center gap-2">
+<div class="w-14 h-14 rounded-full border-2 border-coding/30 bg-coding/10 flex items-center justify-center skill-orb-glow text-coding">
+<span class="material-symbols-outlined text-xl fill-[1]">terminal</span>
+</div>
+<span class="text-[10px] font-black uppercase tracking-tighter text-coding">Coding</span>
+</div>
+<div class="absolute bottom-[20%] left-[45%] flex flex-col items-center gap-2">
+<div class="w-20 h-20 rounded-full border-2 border-focus/30 bg-focus/10 flex items-center justify-center skill-orb-glow text-focus">
+<div class="absolute inset-2 rounded-full border border-focus/50 border-dashed"></div>
+<span class="material-symbols-outlined text-3xl fill-[1]">psychology</span>
+</div>
+<span class="text-[10px] font-black uppercase tracking-tighter text-focus">Focus</span>
+</div>
+</div>
+<div class="relative z-20 flex flex-col items-center">
+<div class="absolute -inset-20 bg-primary/10 blur-[80px] rounded-full"></div>
+<div class="floating-pet relative">
+<div class="w-48 h-48 bg-center bg-no-repeat bg-contain" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA6RWm0SAnvCcOH6i8d2cm1qmJv_urtOPGY06Dg6xZCOTOpQf-g-AP93HXBsaRFjlQrQlxiTEMPZijJSisQamInv92hFjg09KKH-l_5bfjfflHLWWGqjiMg1eN0tuI08Hb7XerJkBBKmRD0cLq9UWGUZMh40cbL9WberGNO6iUWiORK3B7Hyx1TQXB2H0kWNdxPK-vnSZnZyH-2zNjCDV48gjFAJqimStuvH0h1pQGhhLCkhBCi-ds634VldyiEw1P5bninB-2PJmI");'></div>
+<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-32 h-6 bg-black/40 blur-xl rounded-[100%]"></div>
+</div>
+<div class="mt-12 w-64 flex flex-col gap-2">
+<div class="flex justify-between items-end px-1">
+<p class="text-[10px] uppercase font-bold text-[#92c9a4] tracking-widest">Next: Guardian</p>
+<p class="text-xs font-bold text-primary">74%</p>
+</div>
+<div class="h-3 w-full bg-white/5 rounded-full border border-white/10 p-0.5 overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary/50 to-primary rounded-full shadow-[0_0_10px_rgba(19,236,91,0.5)]" style="width: 74%"></div>
+</div>
+</div>
+</div>
+</main>
+<section class="px-6 pb-28">
+<div class="bg-white/5 border border-white/10 rounded-2xl p-5 ios-blur backdrop-saturate-150">
+<h3 class="text-sm font-bold uppercase tracking-wider text-[#92c9a4] mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">auto_awesome</span>
+                    Active Mastery Boosts
+                </h3>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white/5 rounded-xl p-3 border border-white/5">
+<p class="text-[10px] text-white/50 mb-1">Economy</p>
+<p class="text-sm font-bold text-white">+5% Gold <span class="text-coding">Coding</span></p>
+</div>
+<div class="bg-white/5 rounded-xl p-3 border border-white/5">
+<p class="text-[10px] text-white/50 mb-1">Stamina</p>
+<p class="text-sm font-bold text-white">-10% Mana <span class="text-fitness">Fitness</span></p>
+</div>
+<div class="bg-white/5 rounded-xl p-3 border border-white/5">
+<p class="text-[10px] text-white/50 mb-1">Efficiency</p>
+<p class="text-sm font-bold text-white">+2XP <span class="text-focus">Focus</span></p>
+</div>
+<div class="bg-white/5 rounded-xl p-3 border border-white/5 flex items-center justify-center border-dashed">
+<span class="material-symbols-outlined text-white/20">lock</span>
+</div>
+</div>
+</div>
+</section>
+<nav class="fixed bottom-0 left-0 right-0 z-50 h-20 bg-background-dark/95 border-t border-white/10 ios-blur flex items-center justify-around px-4 pb-2">
+<div class="flex flex-col items-center gap-1 text-white/40">
+<span class="material-symbols-outlined text-[28px]">map</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Map</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-white/40">
+<span class="material-symbols-outlined text-[28px]">inventory_2</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Inventory</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[28px] fill-[1]">egg</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Pet</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-white/40">
+<span class="material-symbols-outlined text-[28px]">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Hero</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-white/40">
+<span class="material-symbols-outlined text-[28px]">settings</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Specs</span>
+</div>
+</nav>
+</div>
+
+</body></html>
