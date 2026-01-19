@@ -1,0 +1,4 @@
+127.0.0.1 - - [19/Jan/2026 16:32:03] "GET /frontend/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 16:32:04] "GET /frontend/schedule.json HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 16:32:35] "GET /frontend/index.html HTTP/1.1" 200 -
+127.0.0.1 - - [19/Jan/2026 16:32:36] "GET /frontend/schedule.json HTTP/1.1" 200 -
