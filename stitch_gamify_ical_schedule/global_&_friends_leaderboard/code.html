@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Global &amp; Friends Leaderboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#259df4",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101a22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .gold-glow { box-shadow: 0 0 15px rgba(255, 215, 0, 0.2); border: 1px solid rgba(255, 215, 0, 0.3); }
+        .silver-glow { box-shadow: 0 0 15px rgba(192, 192, 192, 0.15); border: 1px solid rgba(192, 192, 192, 0.2); }
+        .bronze-glow { box-shadow: 0 0 15px rgba(205, 127, 50, 0.15); border: 1px solid rgba(205, 127, 50, 0.2); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen flex flex-col">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined cursor-pointer">arrow_back_ios</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Social Leaderboard</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-12 bg-transparent gap-2 p-0">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+</div>
+</div>
+<!-- Segmented Buttons -->
+<div class="flex px-4 py-2">
+<div class="flex h-11 flex-1 items-center justify-center rounded-xl bg-slate-200 dark:bg-slate-800 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm text-slate-500 dark:text-slate-400 has-[:checked]:text-primary font-bold text-sm transition-all">
+<span class="truncate">Friends</span>
+<input checked="" class="hidden" name="leaderboard-type" type="radio" value="Friends"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-background-dark has-[:checked]:shadow-sm text-slate-500 dark:text-slate-400 has-[:checked]:text-primary font-bold text-sm transition-all">
+<span class="truncate">Global</span>
+<input class="hidden" name="leaderboard-type" type="radio" value="Global"/>
+</label>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto pb-32">
+<!-- User Weekly Status Card -->
+<div class="p-4">
+<div class="flex flex-col items-stretch justify-start rounded-xl shadow-lg bg-primary text-white overflow-hidden relative">
+<!-- Abstract pattern background -->
+<div class="absolute inset-0 opacity-10 pointer-events-none bg-center bg-cover" data-alt="Abstract blue energy patterns and lines" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLbnuu-EmSAo07gMz7R7oapcjqxw-l-KF8jKx3flh0bXRgPgo4xDf_YIBQX09pZELtk5mgdxVtKcvXuSy_Eg2AGbMIAbUcYbQY2_KzUluVMQ9mnPbc4BtRYDYLP2zQZbXHgF6JsA_icRvemW8pj-VkqF0qIXH3Jo98tA34jCi3dwgiaPknMZ1XQGNl_FOGtTaMVO1HFMEKAmb42TJFSPaMLndacuTxAnjeFUZcT3aeCYICLjykphRLrpJiQyKLgFcqgk1MMjvCiG8');"></div>
+<div class="flex w-full flex-col gap-1 p-5 relative z-10">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-white/80 text-xs font-bold uppercase tracking-widest">WEEKLY RANKING</p>
+<p class="text-3xl font-bold leading-tight mt-1">Rank #12</p>
+</div>
+<div class="bg-white/20 backdrop-blur-md rounded-lg px-3 py-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="text-xs font-bold">+4 Spots</span>
+</div>
+</div>
+<div class="mt-4 flex flex-col gap-2">
+<p class="text-white/90 text-sm font-medium">You're in the top 15% this week! Keep pushing to reach the Top 10.</p>
+<div class="flex items-center gap-4 mt-1">
+<div class="flex flex-col">
+<span class="text-xs text-white/70">Points</span>
+<span class="font-bold">1,240 QP</span>
+</div>
+<div class="h-8 w-[1px] bg-white/30"></div>
+<div class="flex flex-col">
+<span class="text-xs text-white/70">Efficacy</span>
+<span class="font-bold">88%</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Top Performers -->
+<div class="flex items-center justify-between px-4 pt-4 pb-2">
+<h2 class="text-xl font-bold tracking-tight">Top Performers</h2>
+<span class="text-xs font-semibold text-primary">View History</span>
+</div>
+<!-- Leaderboard List -->
+<div class="flex flex-col gap-1 px-2">
+<!-- Rank 1 - Gold -->
+<div class="flex items-center gap-4 bg-white dark:bg-slate-800/50 gold-glow mx-2 p-3 rounded-xl justify-between mb-2">
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14 border-2 border-yellow-500" data-alt="Professional male portrait avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDljflzrVyc8Wd_nihmv0icPykzhXhv__lFRJWGnLAjWglHCvZ739ohvDmz40r7k_qBMBbGj9r-Nzua5oFHPt0uE6vKPA9mj96FOYYn8ik6_xg0b4Uccw0FzxtU5r2bIFy3NtHEYov2TpCRviwJQ_19Ef8by85Ctd4owUN-QpQhLVXb5NEKbeTGyTXZtcbSe3JSUgELyNiCgE88KX3kD_lrfzmdldnbVhDY8UIFwBJEYDpoFLyloUvkAhcc8raFfatIh8pYtb-IWZU");'></div>
+<div class="absolute -top-1 -right-1 bg-yellow-500 text-slate-900 rounded-full size-6 flex items-center justify-center font-bold text-xs">1</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<p class="font-bold text-base line-clamp-1">Alex Rivers</p>
+<span class="material-symbols-outlined text-yellow-500 text-sm fill-1">verified</span>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-tighter">Level 45 • 98% Efficacy</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-lg">2,800</p>
+<p class="text-[10px] font-bold text-slate-400 uppercase">QP</p>
+</div>
+</div>
+<!-- Rank 2 - Silver -->
+<div class="flex items-center gap-4 bg-white dark:bg-slate-800/50 silver-glow mx-2 p-3 rounded-xl justify-between mb-2">
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14 border-2 border-slate-300" data-alt="Smiling female portrait avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDP1OMh81S8JPUkvAy2I3ayl6qNOh3nAxYqqcoQKe1NBPjHPPInVG4nIjhnRkceY3G_cUFJl_6k0HYN8AJ6z_ALHJzrEqdPO0mUFxeMSFjqTZQUl0vp4icF4s3PLltCnzUe97f1fbgdEnQfONO6Vuvb8LOp4XKoxyi1e0ZHtlkK9XYGqETR4lu9pezDS0h0NAwfbAAk1xK8ZxWwjyhgIAvp4o5HC2nV-DEELhF_Rqm_atUcmKwBYhoJW_9vXF4JQn2otxpf5ctob5U");'></div>
+<div class="absolute -top-1 -right-1 bg-slate-300 text-slate-900 rounded-full size-6 flex items-center justify-center font-bold text-xs">2</div>
+</div>
+<div class="flex flex-col">
+<p class="font-bold text-base line-clamp-1">Sarah Chen</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-tighter">Level 42 • 94% Efficacy</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-lg text-opacity-80">2,650</p>
+<p class="text-[10px] font-bold text-slate-400 uppercase">QP</p>
+</div>
+</div>
+<!-- Rank 3 - Bronze -->
+<div class="flex items-center gap-4 bg-white dark:bg-slate-800/50 bronze-glow mx-2 p-3 rounded-xl justify-between mb-4">
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14 border-2 border-amber-700" data-alt="Male portrait avatar with glasses" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgXxBBGBDJ-_gkdmJ3P_IQR5aEgeHVRIE8sIi6EgWLJOBczVh0EtNSOUAXlIy3Es7d7CV77-qsOVyFj465upgSQMKJzzNZlrgGvlNY9JhXdillZaoH-5zT0_f-bIMlbbVwkIMGYYxY-yqOkLrjfPAn9Q_ZqMldIUmdZS8N8YPdjVJRJKo64e2FFyTX2ZhCuQ6J0Z8JppfdIC99QZCZTyOghyAFCarLsStkm-t6GOKaZVSoAs2a7fsJbPjEULsO3sYKiL-yH6Slelk");'></div>
+<div class="absolute -top-1 -right-1 bg-amber-700 text-white rounded-full size-6 flex items-center justify-center font-bold text-xs">3</div>
+</div>
+<div class="flex flex-col">
+<p class="font-bold text-base line-clamp-1">Jordan Smith</p>
+<p class="text-slate-500 dark:text-slate-400 text-xs font-medium uppercase tracking-tighter">Level 38 • 92% Efficacy</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-lg text-opacity-60">2,400</p>
+<p class="text-[10px] font-bold text-slate-400 uppercase">QP</p>
+</div>
+</div>
+<!-- Standard List Items -->
+<div class="px-2">
+<!-- Row 4 -->
+<div class="flex items-center gap-4 px-3 min-h-[72px] py-2 justify-between border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<span class="text-slate-400 font-bold text-sm w-4">4</span>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-11 w-11" data-alt="Casual male avatar portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDffrWXj02phNiFi_IkqZVu8ke2oyvyYU_b91PcppUERspdgeianoY2i0uyGldQ8Wt9GM-Q4oQvhEABpTeFnWCHGjUTmZ_r92RxgkToknaVyewySTbfT-NRXRdcosinhuELwhtTKD9ynBBka3_idS2B7uvkQ9dLFyRqNcxIv0R0WgfKOkzCrOK2ELcc8X3oxi8HzgwkwvncdACj50XFQczPvN8Ls0snJVh2es827392iVSHIRKOmKEvk_0dBsTmMXOhWWLoNlhbUkI");'></div>
+<div class="flex flex-col justify-center">
+<p class="font-bold text-sm leading-normal line-clamp-1">Leo Vester</p>
+<p class="text-slate-500 dark:text-slate-400 text-[11px] font-medium leading-normal">Lvl 35 • 85% Eff</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<p class="text-slate-900 dark:text-white font-bold text-sm">2,120 QP</p>
+</div>
+</div>
+<!-- Row 5 -->
+<div class="flex items-center gap-4 px-3 min-h-[72px] py-2 justify-between border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<span class="text-slate-400 font-bold text-sm w-4">5</span>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-11 w-11" data-alt="Professional female avatar portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAjG8AEW89C2jrIn4cALWJR0qxWpwppcpMbjBu4r4NP7dO96qGzHheUOe_5zVIPkS67Pxsumf2PuA_68zQdWcs9nroGdy443ZV1QENJvYtt6MQNJ6rDRKRABexPILNY_WWSEwRnPOdT9vwiCBbY1YZXBZXyLPw-iJzZylUhWpdPZNGmZPPKSSLVqpbboALjdGgrs9Hc5jMXjRJEob95KGOoJ9mKpQstvsP1FPl0qCelnTRs9657cJlciOhGcJA3tUOkwcSNDBCgqt0");'></div>
+<div class="flex flex-col justify-center">
+<p class="font-bold text-sm leading-normal line-clamp-1">Maria Garcia</p>
+<p class="text-slate-500 dark:text-slate-400 text-[11px] font-medium leading-normal">Lvl 34 • 81% Eff</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<p class="text-slate-900 dark:text-white font-bold text-sm">1,980 QP</p>
+</div>
+</div>
+<!-- Row 6 -->
+<div class="flex items-center gap-4 px-3 min-h-[72px] py-2 justify-between border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-4">
+<span class="text-slate-400 font-bold text-sm w-4">6</span>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-11 w-11" data-alt="Creative female avatar portrait" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQOyaAf4V2kUo99JHVZ7179Cq1Cr5sbgqJIqmsBu_lt7mz5DFlVjhQt3qZ2U_uoHTfV0QmIoFwhmoj1U58HXGXExHUNKqey7ZjZIEGQyVtzFTo4PKTrg4IEaEgO_Hd1gSZyhlyWWeXla2E1zARxKmKNGKcchg37Em91XkfpEXe71Ykh_zGwsNaOpAUGQG8bNSyEazADE-fYmVPU08iDmC4DRr_A80C4rTlqhe1nSFNSsmIXhyJpVQ9QsT13HJwL69XHuxVytIunpU");'></div>
+<div class="flex flex-col justify-center">
+<p class="font-bold text-sm leading-normal line-clamp-1">Jamie Fox</p>
+<p class="text-slate-500 dark:text-slate-400 text-[11px] font-medium leading-normal">Lvl 30 • 78% Eff</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<p class="text-slate-900 dark:text-white font-bold text-sm">1,840 QP</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Friendly Rival Floating Section -->
+<div class="fixed bottom-0 left-0 right-0 p-4 pb-8 bg-gradient-to-t from-background-light dark:from-background-dark via-background-light dark:via-background-dark to-transparent pt-10">
+<div class="bg-slate-100 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 backdrop-blur-lg rounded-2xl p-4 flex items-center justify-between shadow-2xl">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-12 w-12 border-2 border-primary/50" data-alt="Friendly rival male avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD3glUR49MHTUX6PckAkm5xv0_J9Xe7mM5HSlCowBF_NVEoDsSxsfr3_-Tivwia8ND_MvQRCeoOaipuMhvFXsJz9T8MVEOBxzyYRJ3LSO4kMRP1Gzw9SxB1Xu8WsQKXW0uqwa3pPMUMPancrynqhNmYqVOdI31dH5d8PU-ve3OmYqEXNenSWIfF43ZDaDASwdPrJjfb_5PFvmXKJPqmnVh4VB6t1MEtS33QjYK7a6ZKlSmIw9UXdwBlROnfA15V2xDg0-E9wq04IS4");'></div>
+<div class="absolute -bottom-1 -right-1 bg-red-500 rounded-full p-1 border-2 border-slate-800">
+<span class="material-symbols-outlined text-[10px] text-white block font-bold">bolt</span>
+</div>
+</div>
+<div class="flex flex-col">
+<p class="text-[10px] font-bold text-primary uppercase tracking-wider">Friendly Rival</p>
+<p class="text-sm font-bold">Beat Marcus!</p>
+<p class="text-[11px] text-slate-500 dark:text-slate-400">+50 QP to overtake</p>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-6 rounded-xl text-sm transition-transform active:scale-95 shadow-lg shadow-primary/30 flex items-center gap-2">
+<span>Challenge</span>
+<span class="material-symbols-outlined text-sm">swords</span>
+</button>
+</div>
+</div>
+</body></html>
