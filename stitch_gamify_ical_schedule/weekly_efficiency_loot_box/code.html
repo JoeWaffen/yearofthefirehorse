@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Weekly Loot Box - Efficiency App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#259df4",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#101a22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: "Space Grotesk", sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .particle-bg {
+            background-image: radial-gradient(circle at 2px 2px, rgba(37, 157, 244, 0.15) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .glow-effect {
+            box-shadow: 0 0 40px rgba(37, 157, 244, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+<div class="relative flex min-h-screen w-full flex-col max-w-[430px] mx-auto overflow-hidden shadow-2xl border-x border-white/5">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between z-10">
+<div class="text-white flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-primary text-[28px]">token</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Architect Vault</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<!-- Particle Background Layer -->
+<div class="absolute inset-0 particle-bg opacity-40 pointer-events-none"></div>
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
+<!-- SectionHeader / Status -->
+<div class="z-10 mt-4">
+<h4 class="text-primary text-sm font-bold leading-normal tracking-[0.2em] px-4 py-2 text-center uppercase">Goal Reached!</h4>
+</div>
+<!-- HeadlineText -->
+<div class="z-10">
+<h1 class="text-white tracking-tight text-[48px] font-bold leading-tight px-4 text-center pb-1">92%</h1>
+</div>
+<!-- MetaText -->
+<div class="z-10">
+<p class="text-[#90b2cb] text-sm font-medium leading-normal pb-6 pt-1 px-4 text-center tracking-wide uppercase">Weekly Efficiency Score</p>
+</div>
+<!-- Central Chest Section (HeaderImage Style) -->
+<div class="relative z-10 px-8 py-4 flex flex-col items-center">
+<div class="w-full aspect-square max-w-[280px] bg-gradient-to-br from-primary/10 to-background-dark rounded-full border border-primary/30 flex items-center justify-center relative glow-effect group cursor-pointer">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[160px] text-primary drop-shadow-[0_0_15px_rgba(37,157,244,0.5)]">deployed_code</span>
+</div>
+<!-- Animated Rings -->
+<div class="absolute inset-[-10px] border border-primary/20 rounded-full animate-pulse"></div>
+<div class="absolute inset-[-25px] border border-primary/10 rounded-full"></div>
+</div>
+<p class="mt-8 text-white/60 text-xs font-medium tracking-widest uppercase">Tap to decrypt vault</p>
+</div>
+<!-- Loot Items Section -->
+<div class="mt-auto px-4 pb-10 space-y-3 z-10">
+<div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4 hover:bg-white/10 transition-colors cursor-pointer">
+<div class="size-12 rounded-lg bg-yellow-500/20 flex items-center justify-center border border-yellow-500/40">
+<span class="material-symbols-outlined text-yellow-500">app_registration</span>
+</div>
+<div class="flex-1">
+<p class="text-[10px] text-yellow-500 font-bold tracking-widest uppercase">Rare Reward</p>
+<h3 class="text-white font-bold">Neon Guardian Avatar</h3>
+</div>
+<span class="material-symbols-outlined text-white/30">chevron_right</span>
+</div>
+<div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4 hover:bg-white/10 transition-colors cursor-pointer">
+<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center border border-primary/40">
+<span class="material-symbols-outlined text-primary">bolt</span>
+</div>
+<div class="flex-1">
+<p class="text-[10px] text-primary font-bold tracking-widest uppercase">Booster</p>
+<h3 class="text-white font-bold">2x XP Multiplier (Monday)</h3>
+</div>
+<span class="material-symbols-outlined text-white/30">chevron_right</span>
+</div>
+<div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center gap-4 hover:bg-white/10 transition-colors cursor-pointer">
+<div class="size-12 rounded-lg bg-emerald-500/20 flex items-center justify-center border border-emerald-500/40">
+<span class="material-symbols-outlined text-emerald-500">diamond</span>
+</div>
+<div class="flex-1">
+<p class="text-[10px] text-emerald-500 font-bold tracking-widest uppercase">Currency</p>
+<h3 class="text-white font-bold">150 Architect Gems</h3>
+</div>
+<span class="material-symbols-outlined text-white/30">chevron_right</span>
+</div>
+<!-- Primary Action Button -->
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl mt-6 shadow-lg shadow-primary/20 active:scale-[0.98] transition-all">
+                CLAIM ALL REWARDS
+            </button>
+<p class="text-center text-white/40 text-[11px] font-medium pt-2">Next reward vault available in 6 days</p>
+</div>
+<!-- Footer Visual Spacer -->
+<div class="h-8 bg-background-light dark:bg-background-dark"></div>
+</div>
+<!-- Hidden Image References for data-alt tagging -->
+<div class="hidden">
+<img data-alt="A futuristic neon glowing cyber vault chest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUiEHjvuXcmOrOG4UfKZI1cew4PW84Tc6u0t_JN7k0QYl-fXBmVPAMIB5l4Og0Fmbs0EK2X8Z3XtmUPOKfYL0pMBxIt7zZR6h5WnpOCqST_cZlEcXnWREKarG-x7UUDWg4q312KEJA5aXIMwEwaH6078aDcMqubFuga7dP3C1r8HCBnbo0t_Cerfnuj24u07Qp_qEqKamYl70O1nSz4JeHKzAUbIBQECSFT9mYhk96Du1_MXEZ9KAROcSaImQVtACUWlq9XhUbpT8"/>
+</div>
+</body></html>

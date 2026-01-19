@@ -1,0 +1,4 @@
+*.ics
+frontend/schedule.json
+__pycache__/
+*.pyc
