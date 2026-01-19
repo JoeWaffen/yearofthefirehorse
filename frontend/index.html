@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamified Schedule</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .task { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+        .task.todo { background-color: #fff0f0; border-left: 5px solid #ff4444; }
+        .task.done { background-color: #f0fff0; border-left: 5px solid #44ff44; }
+        h1 { color: #333; }
+        pre { white-space: pre-wrap; background: #f4f4f4; padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Gamified Schedule Quests</h1>
+    <div id="quest-list">Loading quests...</div>
+
+    <script>
+        fetch('schedule.json')
+            .then(response => response.json())
+            .then(data => {
+                const list = document.getElementById('quest-list');
+                list.innerHTML = '';
+                if (data.length === 0) {
+                    list.innerHTML = '<p>No quests found.</p>';
+                    return;
+                }
+
+                // Sort by date
+                data.sort((a, b) => new Date(a.start) - new Date(b.start));
+
+                data.forEach(task => {
+                    const div = document.createElement('div');
+                    div.className = `task ${task.status}`;
+                    const date = new Date(task.start).toLocaleString();
+                    div.innerHTML = `
+                        <h3>${task.summary}</h3>
+                        <p><strong>Status:</strong> ${task.status}</p>
+                        <p><strong>Date:</strong> ${date}</p>
+                        <p><strong>Description:</strong></p>
+                        <pre>${task.description}</pre>
+                    `;
+                    list.appendChild(div);
+                });
+            })
+            .catch(err => {
+                console.error('Error loading schedule:', err);
+                document.getElementById('quest-list').innerHTML = '<p>Error loading schedule.json</p>';
+            });
+    </script>
+</body>
+</html>
