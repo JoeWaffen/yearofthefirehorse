@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Boss Battle</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d33",
+                        "background-light": "#f8f5f6",
+                        "background-dark": "#221013",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .boss-glow {
+            box-shadow: 0 0 20px rgba(242, 13, 51, 0.3);
+        }
+        .action-card:active {
+            transform: scale(0.98);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-white min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<div class="sticky top-0 z-50 flex items-center bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md p-4 justify-between border-b border-white/10">
+<div class="text-white flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined cursor-pointer">arrow_back_ios</span>
+</div>
+<div class="flex flex-col items-center">
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Project Boss Battle</h2>
+<p class="text-[10px] uppercase tracking-widest text-primary font-bold">In Combat</p>
+</div>
+<div class="flex w-12 items-center justify-end">
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-lg bg-white/5 text-white">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</div>
+<!-- Main Content Container -->
+<main class="flex-1 flex flex-col max-w-md mx-auto w-full pb-10">
+<!-- Boss Arena Section -->
+<div class="relative px-4 pt-4">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl min-h-64 relative border border-white/5 boss-glow" data-alt="Intimidating dark red mechanical dragon representing a project monster" style='background-image: linear-gradient(to bottom, transparent, #221013), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCXryjZD-K7gLOZwDT_sKV9rMHqp7ShLLY5dyuPZefFHtf3D34nLmHvZb6o_Ah1miDtyxe2qhpeS3_f31h5Qi2R7QzfsPihcnsz-8_6UIKIIQRcihuTEofHaJxrdLjr4zebrf1tD-RF6dsecWxNPjB-potl3Es6s1s4Mu7kysjClF55Sco_bwo2h3xpxocKyR1npcMHpUTom2gnUTgWCbkFXvxQvoQWcW_OvWT6ecLbPEqhoDCYmzTzVyfkS7t7aC477OYXS4xLqZ8");'>
+<!-- Party Section (Floating) -->
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<div class="flex items-center gap-2 bg-black/40 backdrop-blur-sm p-1 pr-3 rounded-full border border-white/10">
+<div class="size-8 rounded-full bg-cover" data-alt="Team member Sarah avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBFhFJus9hU7bUlTR6E9KmOu3vO8x0Y9QtO17gHBxymD4EOfJW1RTgyINtdAbtm51FXh9lX9lvzMd9D5Uhc0Phz0IYc7Oq2FwdtnLQSenaoaCUoXrTWru92O_YzvQcB_Bd4jdsCeOEOmj-v8fO7POvLl2aMnYoPHZjvEE5SZ1Sm8jNeTxqqO731WZBRSFzDz0xLqVpx_KoMHBLVuWnBggbN_jwwXqC-w3vFIaY1CmryBUH9INi2v0zhY-SSwqfNtzcveM1rhWjNYg')"></div>
+<span class="text-[10px] font-bold">READY</span>
+</div>
+<div class="flex items-center gap-2 bg-black/40 backdrop-blur-sm p-1 pr-3 rounded-full border border-white/10">
+<div class="size-8 rounded-full bg-cover" data-alt="Team member Mike avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAauvaCh6THMyjMCys7ML-hpRQjO71FJcnaEqVbhnkx6Akf3cRhs6XB59lpmA24TA1w6Bnj8ubJkyGKoqFikt-_5UdyRiIH6waiWFBNzXWBIdyN38EObFC0xzyxQm_W6aSiYwL5IquQENx7axgY-fbDWPcRFxcs6DbvEtIn3ZxPSchCqkxnHR2rgGStcAEHGxxWAfdNtmrkM8dZTs_UiVK7ML0MIyJ3ic1wUibLQGbR10jy95lVrB4o7PjvwNAnaodCvHWyZog0nmQ')"></div>
+<span class="text-[10px] font-bold">CASTING</span>
+</div>
+</div>
+<!-- Boss Label & HP -->
+<div class="p-4 w-full">
+<div class="flex flex-col gap-2">
+<div class="flex gap-4 justify-between items-end">
+<div>
+<p class="text-primary text-[10px] font-bold uppercase tracking-tighter">Level 99 Mega-Project</p>
+<p class="text-white text-xl font-bold leading-none">Quarterly Report Behemoth</p>
+</div>
+<p class="text-white text-xs font-mono font-medium leading-normal bg-primary/20 px-2 py-1 rounded">1,340 / 2,000 HP</p>
+</div>
+<div class="h-4 w-full rounded-full bg-black/40 p-0.5 border border-white/10">
+<div class="h-full rounded-full bg-gradient-to-r from-primary to-[#ff4d6a] shadow-[0_0_10px_rgba(242,13,51,0.5)]" style="width: 67%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Deadline Timer -->
+<div class="px-4 py-4">
+<div class="flex items-center justify-between mb-2">
+<span class="text-[10px] font-bold text-white/50 uppercase tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span> Time Remaining
+                </span>
+</div>
+<div class="flex gap-3">
+<div class="flex grow basis-0 flex-col items-center gap-1 p-3 rounded-xl bg-white/5 border border-white/10">
+<p class="text-white text-xl font-bold font-display">04</p>
+<p class="text-white/40 text-[10px] font-bold uppercase">Hrs</p>
+</div>
+<div class="flex grow basis-0 flex-col items-center gap-1 p-3 rounded-xl bg-white/5 border border-white/10">
+<p class="text-white text-xl font-bold font-display">22</p>
+<p class="text-white/40 text-[10px] font-bold uppercase">Mins</p>
+</div>
+<div class="flex grow basis-0 flex-col items-center gap-1 p-3 rounded-xl bg-primary/10 border border-primary/30">
+<p class="text-primary text-xl font-bold font-display">59</p>
+<p class="text-primary/60 text-[10px] font-bold uppercase">Secs</p>
+</div>
+</div>
+</div>
+<!-- Player HUD -->
+<div class="px-4 py-2 border-y border-white/5 bg-white/[0.02]">
+<div class="flex items-center gap-4">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-xl size-16 border-2 border-primary/50" data-alt="User avatar in a focused warrior stance" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAsKgTbMOe5A3CyOvZ0JraMm8opaGyDj4uIXOzhXyA54u6yKtpLYm8WXetJYh13RIw15qwyIV-OE72y7LPa3K965XOmll-6ZKprEGinJ17vJ45cct0OfC7MWMA3cfckjGQ-pJ9Uz9fRahdRTWKXmNsRnHR4KZznyudMjyaeVFdAaa7VjbRtVDN2QhQJdE3lUjtUc1H_byJOw7emFlCpJWewzOTmZ6f1u8bFcIm9BZ0G66iXujo9oxCB7Tx3oFume8c2dd7RYwm-WE");'>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary text-[10px] font-bold px-1.5 py-0.5 rounded border border-background-dark">
+                        LVL 42
+                    </div>
+</div>
+<div class="flex flex-col flex-1 gap-2">
+<div class="flex justify-between items-center">
+<p class="text-white text-sm font-bold tracking-tight">Productivity Hero Alex</p>
+<span class="text-primary text-[10px] font-bold">STATUS: FOCUSED</span>
+</div>
+<!-- Energy/Health Bar -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-[9px] font-bold uppercase opacity-60">
+<span>Energy</span>
+<span>85%</span>
+</div>
+<div class="h-1.5 rounded-full bg-white/10">
+<div class="h-full rounded-full bg-green-500" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Focus/Mana Bar -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-center text-[9px] font-bold uppercase opacity-60">
+<span>Focus</span>
+<span>90%</span>
+</div>
+<div class="h-1.5 rounded-full bg-white/10">
+<div class="h-full rounded-full bg-blue-500" style="width: 90%;"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Combat Commands / Sub-tasks -->
+<div class="px-4 py-6">
+<h3 class="text-xs font-bold text-white/50 uppercase tracking-widest mb-4 flex items-center justify-between">
+<span>Select Attack (Sub-tasks)</span>
+<span class="text-primary">Tap to execute</span>
+</h3>
+<div class="flex flex-col gap-3">
+<!-- Task 1 -->
+<button class="action-card group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 text-left transition-all hover:bg-white/[0.08] hover:border-primary/50">
+<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="text-white font-bold text-sm">Analyze Q3 Data Sets</p>
+<span class="text-primary text-[10px] font-bold font-mono">250 DMG</span>
+</div>
+<p class="text-white/40 text-xs mt-1">Difficulty: High | Time: 45m</p>
+</div>
+<span class="material-symbols-outlined text-white/20">chevron_right</span>
+</button>
+<!-- Task 2 -->
+<button class="action-card group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 text-left transition-all hover:bg-white/[0.08] hover:border-primary/50">
+<div class="size-12 rounded-lg bg-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="text-white font-bold text-sm">Draft Executive Summary</p>
+<span class="text-primary text-[10px] font-bold font-mono">150 DMG</span>
+</div>
+<p class="text-white/40 text-xs mt-1">Difficulty: Med | Time: 20m</p>
+</div>
+<span class="material-symbols-outlined text-white/20">chevron_right</span>
+</button>
+<!-- Task 3 -->
+<button class="action-card group flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 text-left transition-all hover:bg-white/[0.08] hover:border-primary/50 opacity-60">
+<div class="size-12 rounded-lg bg-white/10 flex items-center justify-center text-white/40">
+<span class="material-symbols-outlined">share</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="text-white/60 font-bold text-sm line-through">Distribute Briefing Docs</p>
+<span class="text-white/20 text-[10px] font-bold font-mono">DONE</span>
+</div>
+<p class="text-white/40 text-xs mt-1">Executed by: Alex</p>
+</div>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</button>
+</div>
+</div>
+<!-- Special Moves Footer -->
+<div class="mt-auto px-4 pt-4 border-t border-white/5">
+<div class="flex gap-4">
+<button class="flex-1 bg-white/5 hover:bg-white/10 py-3 rounded-lg border border-white/10 flex flex-col items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-blue-400">timer</span>
+<span class="text-[9px] font-bold uppercase text-white/60">Focus Potion</span>
+</button>
+<button class="flex-1 bg-primary py-3 rounded-lg flex flex-col items-center gap-1 shadow-lg shadow-primary/20 hover:brightness-110">
+<span class="material-symbols-outlined text-white">bolt</span>
+<span class="text-[9px] font-bold uppercase text-white">Ultimate: Sprint</span>
+</button>
+<button class="flex-1 bg-white/5 hover:bg-white/10 py-3 rounded-lg border border-white/10 flex flex-col items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-green-400">group</span>
+<span class="text-[9px] font-bold uppercase text-white/60">Call Ally</span>
+</button>
+</div>
+</div>
+</main>
+<!-- iOS Home Indicator -->
+<div class="h-1.5 w-32 bg-white/20 rounded-full mx-auto my-3"></div>
+</body></html>

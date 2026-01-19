@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Personal Growth Skill Tree</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eebd2b",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221d10",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .skill-node-glow {
+            box-shadow: 0 0 15px rgba(238, 189, 43, 0.4);
+        }
+        .node-line {
+            position: absolute;
+            background: #675a32;
+            z-index: 0;
+        }
+        .node-line.active {
+            background: #eebd2b;
+            box-shadow: 0 0 8px rgba(238, 189, 43, 0.6);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white min-h-screen">
+<!-- Top App Bar -->
+<div class="fixed top-0 left-0 right-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-[#675a32]/30">
+<div class="flex items-center p-4 pb-2 justify-between max-w-md mx-auto">
+<div class="text-primary flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-3xl">account_circle</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center">Skill Tree</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center rounded-lg h-12 bg-transparent text-primary">
+<span class="material-symbols-outlined text-3xl">emoji_events</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content Container (Scrollable) -->
+<main class="pt-20 pb-24 max-w-md mx-auto px-4">
+<!-- Stats Section -->
+<div class="flex flex-wrap gap-4 py-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-1 rounded-xl p-5 bg-[#483f23] border border-primary/20 shadow-xl">
+<p class="text-primary/80 text-xs font-bold uppercase tracking-wider">Total Mastery Level</p>
+<div class="flex items-baseline gap-2">
+<p class="text-white text-3xl font-extrabold leading-tight">Level 42</p>
+<p class="text-[#0bda1d] text-sm font-bold">+5% XP</p>
+</div>
+</div>
+</div>
+<!-- Progress Bar -->
+<div class="flex flex-col gap-3 py-4 bg-[#322c18] rounded-xl px-4 border border-[#675a32]/40">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-white text-sm font-bold leading-normal">Next Rank: Novice Polymath</p>
+<p class="text-primary text-xs font-bold leading-normal">750 / 1000 XP</p>
+</div>
+<div class="rounded-full bg-[#675a32]/40 h-2.5 overflow-hidden">
+<div class="h-full rounded-full bg-primary shadow-[0_0_10px_rgba(238,189,43,0.5)]" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Category Tabs -->
+<div class="mt-6 mb-4 sticky top-[76px] z-40 bg-background-dark/80 backdrop-blur-sm -mx-4 px-4">
+<div class="flex border-b border-[#675a32] gap-6 overflow-x-auto no-scrollbar">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-white pb-3 pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold tracking-wide">All Paths</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#c9bb92] pb-3 pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold tracking-wide">Fitness</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#c9bb92] pb-3 pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold tracking-wide">Intellect</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#c9bb92] pb-3 pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold tracking-wide">Focus</p>
+</a>
+</div>
+</div>
+<!-- Intellect Branch -->
+<section class="mt-8 relative">
+<div class="flex items-center gap-3 mb-8">
+<div class="p-2 bg-primary/20 rounded-lg">
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<h3 class="text-white tracking-tight text-xl font-bold">Intellect Branch</h3>
+</div>
+<div class="relative flex flex-col items-center gap-16 py-4">
+<!-- Vertical Connectors (Mocked with absolute divs) -->
+<div class="node-line active w-1 h-16 top-20"></div>
+<div class="node-line active w-1 h-16 top-[184px]"></div>
+<div class="node-line w-1 h-16 top-[348px]"></div>
+<!-- Node 1: Completed -->
+<div class="relative z-10 flex flex-col items-center text-center group">
+<div class="w-20 h-20 bg-primary rounded-xl flex items-center justify-center skill-node-glow transform rotate-45 border-4 border-[#483f23]">
+<span class="material-symbols-outlined text-background-dark text-4xl -rotate-45">terminal</span>
+</div>
+<div class="mt-6">
+<p class="text-white font-bold text-sm">Python Basics</p>
+<p class="text-primary text-[10px] font-bold uppercase tracking-widest mt-1">Mastered</p>
+</div>
+</div>
+<!-- Node 2: Completed -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-20 h-20 bg-primary rounded-xl flex items-center justify-center skill-node-glow transform rotate-45 border-4 border-[#483f23]">
+<span class="material-symbols-outlined text-background-dark text-4xl -rotate-45">database</span>
+</div>
+<div class="mt-6">
+<p class="text-white font-bold text-sm">Data Structures</p>
+<p class="text-primary text-[10px] font-bold uppercase tracking-widest mt-1">Mastered</p>
+</div>
+</div>
+<!-- Node 3: Locked -->
+<div class="relative z-10 flex flex-col items-center text-center opacity-50">
+<div class="w-20 h-20 bg-[#483f23] rounded-xl flex items-center justify-center transform rotate-45 border-2 border-[#675a32]">
+<span class="material-symbols-outlined text-[#675a32] text-4xl -rotate-45">api</span>
+</div>
+<div class="mt-6">
+<p class="text-[#c9bb92] font-bold text-sm">Backend Architect</p>
+<p class="text-[#675a32] text-[10px] font-bold uppercase tracking-widest mt-1">Locked</p>
+<p class="text-[#eebd2b] text-[9px] mt-1 font-medium italic">Req: Logic Level 5</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Fitness Branch Preview -->
+<section class="mt-20 border-t border-[#675a32]/20 pt-12">
+<div class="flex items-center gap-3 mb-8">
+<div class="p-2 bg-blue-500/20 rounded-lg">
+<span class="material-symbols-outlined text-blue-400">fitness_center</span>
+</div>
+<h3 class="text-white tracking-tight text-xl font-bold">Physicality Path</h3>
+</div>
+<div class="relative flex flex-col items-center gap-16 py-4">
+<div class="node-line active bg-blue-500 w-1 h-16 top-20 shadow-[0_0_8px_rgba(96,165,250,0.6)]"></div>
+<!-- Node: 5km Run -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.5)] border-4 border-[#221d10]">
+<span class="material-symbols-outlined text-white text-4xl">directions_run</span>
+</div>
+<div class="mt-4">
+<p class="text-white font-bold text-sm">5km Endurance</p>
+<p class="text-blue-400 text-[10px] font-bold uppercase tracking-widest mt-1">Completed</p>
+</div>
+</div>
+<!-- Node: Locked Strength -->
+<div class="relative z-10 flex flex-col items-center text-center opacity-40">
+<div class="w-20 h-20 bg-[#2d3a4d] rounded-full flex items-center justify-center border-2 border-[#4a5568]">
+<span class="material-symbols-outlined text-[#4a5568] text-4xl">weight</span>
+</div>
+<div class="mt-4">
+<p class="text-[#a0aec0] font-bold text-sm">Strength Tier II</p>
+<p class="text-[#4a5568] text-[10px] font-bold uppercase tracking-widest mt-1">Locked</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Detail Modal (Mocked as visible for presentation) -->
+<div class="fixed bottom-0 left-0 right-0 z-[60] bg-background-dark border-t-2 border-primary rounded-t-3xl shadow-2xl transition-transform transform translate-y-0">
+<div class="w-12 h-1.5 bg-[#675a32] rounded-full mx-auto my-3"></div>
+<div class="px-6 pb-8 pt-2 max-w-md mx-auto">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h4 class="text-white text-xl font-extrabold">Python Basics</h4>
+<p class="text-primary text-sm font-medium">Intellect Branch • Node Mastered</p>
+</div>
+<div class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase">
+                    +250 XP
+                </div>
+</div>
+<p class="text-[#c9bb92] text-sm mb-6 leading-relaxed">
+                Contributing calendar quests from your Google Calendar sync:
+            </p>
+<div class="space-y-3">
+<div class="flex items-center gap-4 bg-[#322c18] p-3 rounded-lg border border-[#675a32]/30">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+<div class="flex-1">
+<p class="text-white text-sm font-bold">Introduction to Lists &amp; Dicts</p>
+<p class="text-[#c9bb92] text-xs">Completed Oct 12 • 2h Deep Work</p>
+</div>
+<span class="material-symbols-outlined text-[#0bda1d]">check_circle</span>
+</div>
+<div class="flex items-center gap-4 bg-[#322c18] p-3 rounded-lg border border-[#675a32]/30">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+<div class="flex-1">
+<p class="text-white text-sm font-bold">LeetCode Easy: Two Sum</p>
+<p class="text-[#c9bb92] text-xs">Completed Oct 14 • 1.5h Focus</p>
+</div>
+<span class="material-symbols-outlined text-[#0bda1d]">check_circle</span>
+</div>
+<div class="flex items-center gap-4 bg-[#322c18] p-3 rounded-lg border border-[#675a32]/30">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+<div class="flex-1">
+<p class="text-white text-sm font-bold">Logic Functions Workshop</p>
+<p class="text-[#c9bb92] text-xs">Completed Oct 15 • 3h Productivity</p>
+</div>
+<span class="material-symbols-outlined text-[#0bda1d]">check_circle</span>
+</div>
+</div>
+<button class="w-full mt-8 bg-primary text-background-dark font-bold py-4 rounded-xl shadow-lg hover:opacity-90 active:scale-[0.98] transition-all">
+                Close Details
+            </button>
+</div>
+</div>
+<!-- Navigation Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-background-dark/95 border-t border-[#675a32]/30 backdrop-blur-lg z-[55] pb-4">
+<div class="flex justify-around items-center p-3 max-w-md mx-auto">
+<button class="flex flex-col items-center gap-1 text-[#c9bb92]">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold">Dashboard</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="text-[10px] font-bold">Tree</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#c9bb92]">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-bold">Efficiency</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#c9bb92]">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Settings</span>
+</button>
+</div>
+</nav>
+</body></html>
