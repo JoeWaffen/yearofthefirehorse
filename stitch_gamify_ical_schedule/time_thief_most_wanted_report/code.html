@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d41132",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#221013",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<title>Time Thief Most Wanted Report</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+<!-- Top App Bar -->
+<div class="relative flex w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden border-b border-primary/20">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="text-primary flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined cursor-pointer">arrow_back</span>
+</div>
+<h2 class="text-primary text-sm font-black leading-tight tracking-[0.2em] flex-1 text-center uppercase">Most Wanted Report</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded h-12 bg-transparent text-primary">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Profile Header / Most Wanted Character -->
+<div class="flex flex-col bg-background-light dark:bg-background-dark p-6 @container">
+<div class="flex w-full flex-col gap-6 items-center">
+<div class="relative group">
+<!-- Glitch/Detective Frame Effect -->
+<div class="absolute -inset-1 bg-primary/20 blur-sm"></div>
+<div class="relative bg-center bg-no-repeat aspect-square bg-cover rounded-lg border-2 border-primary w-48 h-48" data-alt="Stylized rogue-like silhouette of the social media shadow character" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCKd5-lPSMwKJpEOQgb-lP6tUe6oFrAaB0oZHISMLKXThG06a02-V7u7kVj5yJqslELj2xE1O5R-syXROrSstGAvWg2H_4WkY_qDrkZxMWr9TSn0qk3A8MluRZofdwEV2_qAzuuo2bRlmE8v_L7-olqt6ETjPjZVVEbPu6hLbzHwf-SBWZ85pFu3VEj8w4bnmd94hoRG03eAvk8P6pQLlfTKVJZk817qyGjfJquZr6Hdj3zJ0It0D9VUt-qbXbTnkZ2hi0kfI5KzIg");'>
+</div>
+<div class="absolute bottom-2 left-2 bg-primary px-2 py-1">
+<p class="text-[10px] font-bold tracking-widest text-white">WANTED</p>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center space-y-1">
+<p class="text-primary text-3xl font-black leading-tight tracking-tight text-center uppercase">Social Media Shadow</p>
+<div class="bg-primary/10 border border-primary/30 px-3 py-1 rounded">
+<p class="text-primary text-xs font-bold leading-normal text-center tracking-widest uppercase">Weekly Crime Level: Critical</p>
+</div>
+<p class="text-neutral-500 dark:text-[#c9929b] text-sm font-medium leading-normal text-center mt-2 italic">The biggest distraction on your record this week.</p>
+</div>
+</div>
+</div>
+<!-- Theft Trend Chart (Generated Section) -->
+<div class="px-4 py-2">
+<div class="bg-primary/5 border border-primary/20 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-4">
+<h4 class="text-xs font-bold tracking-widest text-primary uppercase">Theft Trend</h4>
+<p class="text-xs text-[#c9929b]">TOTAL LOSS: 22.4 HRS</p>
+</div>
+<!-- Mock Chart Area -->
+<div class="h-24 w-full flex items-end gap-1 px-2">
+<div class="bg-primary/20 w-full h-[40%] rounded-t-sm"></div>
+<div class="bg-primary/40 w-full h-[60%] rounded-t-sm"></div>
+<div class="bg-primary w-full h-[100%] rounded-t-sm"></div>
+<div class="bg-primary/60 w-full h-[75%] rounded-t-sm"></div>
+<div class="bg-primary/30 w-full h-[50%] rounded-t-sm"></div>
+<div class="bg-primary/10 w-full h-[30%] rounded-t-sm"></div>
+<div class="bg-primary/20 w-full h-[45%] rounded-t-sm"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] font-bold text-[#c9929b] px-1 uppercase">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+</div>
+<!-- Section Header: Stolen Time -->
+<div class="pt-6">
+<h3 class="text-primary text-xs font-black leading-tight tracking-[0.2em] px-4 pb-2 uppercase">Stolen Time Ledger</h3>
+</div>
+<!-- List Items -->
+<div class="flex flex-col gap-1">
+<!-- List Item 1 -->
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[72px] py-2 justify-between hover:bg-primary/5 transition-colors border-y border-primary/5">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 border border-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-neutral-900 dark:text-white text-base font-bold leading-normal line-clamp-1 uppercase tracking-tight">Email Vortex</p>
+<p class="text-neutral-500 dark:text-[#c9929b] text-xs font-normal leading-normal line-clamp-1">Persistent distraction during peak hours</p>
+</div>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-primary text-lg font-black leading-normal italic">4.5 hrs</p>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[72px] py-2 justify-between hover:bg-primary/5 transition-colors border-y border-primary/5">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 border border-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-neutral-900 dark:text-white text-base font-bold leading-normal line-clamp-1 uppercase tracking-tight">Meeting Mimic</p>
+<p class="text-neutral-500 dark:text-[#c9929b] text-xs font-normal leading-normal line-clamp-1">Unstructured calls and synced calendar bloat</p>
+</div>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-primary text-lg font-black leading-normal italic">6.2 hrs</p>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="flex items-center gap-4 bg-background-light dark:bg-background-dark px-4 min-h-[72px] py-2 justify-between hover:bg-primary/5 transition-colors border-y border-primary/5">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 border border-primary/20 shrink-0 size-12">
+<span class="material-symbols-outlined">browser_updated</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-neutral-900 dark:text-white text-base font-bold leading-normal line-clamp-1 uppercase tracking-tight">Doom Scroll Specter</p>
+<p class="text-neutral-500 dark:text-[#c9929b] text-xs font-normal leading-normal line-clamp-1">Rapid content consumption loop</p>
+</div>
+</div>
+<div class="shrink-0 text-right">
+<p class="text-primary text-lg font-black leading-normal italic">11.7 hrs</p>
+</div>
+</div>
+</div>
+<!-- Bounty Board Section (Generated) -->
+<div class="pt-8 pb-4">
+<h3 class="text-primary text-xs font-black leading-tight tracking-[0.2em] px-4 pb-4 uppercase">Active Bounty Board</h3>
+<div class="flex overflow-x-auto gap-4 px-4 pb-4 no-scrollbar">
+<!-- Bounty Card 1 -->
+<div class="min-w-[200px] bg-primary border-2 border-primary p-4 flex flex-col justify-between h-36">
+<div>
+<h4 class="text-white text-xs font-black tracking-widest uppercase italic">Reclamation</h4>
+<p class="text-white/80 text-sm font-medium mt-1">Batch emails for 25 mins</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-yellow-400">monetization_on</span>
+<span class="text-white font-bold text-sm">200 Gold</span>
+</div>
+<span class="material-symbols-outlined text-white">chevron_right</span>
+</div>
+</div>
+<!-- Bounty Card 2 -->
+<div class="min-w-[200px] border-2 border-primary/40 bg-background-light dark:bg-background-dark p-4 flex flex-col justify-between h-36">
+<div>
+<h4 class="text-primary text-xs font-black tracking-widest uppercase italic">The Purge</h4>
+<p class="text-neutral-400 text-sm font-medium mt-1">Unsubscribe from 5 lists</p>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">military_tech</span>
+<span class="text-primary font-bold text-sm">500 XP</span>
+</div>
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="p-4 sticky bottom-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-black py-4 uppercase tracking-[0.25em] flex items-center justify-center gap-2 border-t border-white/20">
+<span class="material-symbols-outlined">target</span>
+            Initiate Focus Strike
+        </button>
+</div>
+<div class="h-8 bg-background-light dark:bg-background-dark"></div>
+</body></html>

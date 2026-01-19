@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Task Optimizer &amp; Time Hacks</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glow-sm { box-shadow: 0 0 10px rgba(19, 236, 91, 0.2); }
+        .glow-md { box-shadow: 0 0 15px rgba(19, 236, 91, 0.4); }
+        body { -webkit-tap-highlight-color: transparent; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white selection:bg-primary/30">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<!-- TopAppBar -->
+<div class="sticky top-0 z-50 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 pb-2 justify-between border-b border-primary/10">
+<div class="text-primary flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-3xl">analytics</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center">Efficacy Lab</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">sync</span>
+</button>
+</div>
+</div>
+<!-- Optimizer Level / Progress -->
+<div class="flex flex-col gap-3 p-4 pt-6">
+<div class="flex gap-6 justify-between items-end">
+<div>
+<p class="text-primary text-xs font-bold uppercase tracking-widest mb-1">Current Status</p>
+<p class="text-slate-900 dark:text-white text-xl font-bold leading-none">Optimizer Level 4</p>
+</div>
+<p class="text-slate-900 dark:text-white text-sm font-medium leading-normal bg-primary/20 px-2 py-1 rounded">650 XP</p>
+</div>
+<div class="rounded-full bg-slate-200 dark:bg-[#326744] h-2.5 overflow-hidden">
+<div class="h-full rounded-full bg-primary glow-sm" style="width: 65%;"></div>
+</div>
+<div class="flex justify-between items-center">
+<p class="text-slate-500 dark:text-[#92c9a4] text-xs font-medium">Next rank: Time Lord</p>
+<p class="text-slate-400 dark:text-[#92c9a4]/50 text-[10px] uppercase font-bold tracking-tighter">350 XP TO GO</p>
+</div>
+</div>
+<!-- SectionHeader: Time Hacks -->
+<div class="flex items-center justify-between px-4 pt-6">
+<h2 class="text-slate-900 dark:text-white text-[22px] font-bold leading-tight tracking-tight">AI Time Hacks</h2>
+<span class="text-primary text-xs font-bold bg-primary/10 px-2 py-1 rounded-full border border-primary/20">2 NEW</span>
+</div>
+<!-- Carousel: AI Hacks -->
+<div class="flex overflow-x-auto no-scrollbar snap-x snap-mandatory">
+<div class="flex items-stretch p-4 gap-4">
+<!-- Card 1 -->
+<div class="flex h-full flex-col gap-4 rounded-xl bg-white dark:bg-[#193322] border border-slate-200 dark:border-primary/10 shadow-lg min-w-[280px] snap-center">
+<div class="w-full h-32 bg-center bg-no-repeat bg-cover rounded-t-xl flex flex-col items-center justify-center bg-gradient-to-br from-primary/20 to-primary/5" data-alt="abstract tech patterns showing email synchronization">
+<span class="material-symbols-outlined text-5xl text-primary opacity-60">mail_lock</span>
+</div>
+<div class="flex flex-col flex-1 justify-between p-4 pt-0 gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-sm">bolt</span>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-normal">Batch 3 Emails</p>
+</div>
+<p class="text-slate-500 dark:text-[#92c9a4] text-sm font-normal leading-tight">Group communication tasks to save 20 mins of context switching.</p>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary/10 hover:bg-primary/20 text-primary text-sm font-bold transition-colors">
+<span class="truncate">Review Impact</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex h-full flex-col gap-4 rounded-xl bg-white dark:bg-[#193322] border border-slate-200 dark:border-primary/10 shadow-lg min-w-[280px] snap-center">
+<div class="w-full h-32 bg-center bg-no-repeat bg-cover rounded-t-xl flex flex-col items-center justify-center bg-gradient-to-br from-blue-500/20 to-primary/5" data-alt="geometric representation of focus and time management">
+<span class="material-symbols-outlined text-5xl text-primary opacity-60">psychology_alt</span>
+</div>
+<div class="flex flex-col flex-1 justify-between p-4 pt-0 gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-sm">trending_up</span>
+<p class="text-slate-900 dark:text-white text-base font-bold leading-normal">Deep Work Shift</p>
+</div>
+<p class="text-slate-500 dark:text-[#92c9a4] text-sm font-normal leading-tight">Move to 9 AM for +15% Focus peak based on your circadian rhythm.</p>
+</div>
+<button class="flex w-full cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary/10 hover:bg-primary/20 text-primary text-sm font-bold transition-colors">
+<span class="truncate">Review Impact</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- SectionHeader: Efficiency Projection -->
+<h2 class="text-slate-900 dark:text-white text-[22px] font-bold leading-tight tracking-tight px-4 pb-3 pt-6">Efficiency Projection</h2>
+<!-- Custom Chart Component -->
+<div class="px-4">
+<div class="bg-white dark:bg-[#193322] rounded-xl border border-slate-200 dark:border-primary/10 p-5 shadow-inner">
+<div class="flex justify-between items-center mb-6">
+<div class="flex flex-col">
+<span class="text-slate-400 dark:text-[#92c9a4] text-xs font-bold uppercase">Estimated Time Saved</span>
+<span class="text-slate-900 dark:text-white text-2xl font-black">2h 45m <span class="text-primary text-sm font-bold">/ week</span></span>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-slate-400 dark:text-[#92c9a4] text-xs font-bold uppercase">Focus Score</span>
+<span class="text-primary text-2xl font-black">+22%</span>
+</div>
+</div>
+<!-- SVG Visualization of Chart -->
+<div class="relative w-full h-32 mb-4">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 400 100">
+<!-- Current Path (Gray) -->
+<path d="M0,80 Q50,75 100,85 T200,70 T300,80 T400,75" fill="none" opacity="0.4" stroke="#64748b" stroke-dasharray="4" stroke-width="2"></path>
+<!-- Optimized Path (Primary Glow) -->
+<path d="M0,80 Q50,60 100,40 T200,20 T300,10 T400,5" fill="none" stroke="#13ec5b" stroke-width="3"></path>
+<defs>
+<lineargradient id="chartGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#13ec5b;stop-opacity:0.2"></stop>
+<stop offset="100%" style="stop-color:#13ec5b;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,80 Q50,60 100,40 T200,20 T300,10 T400,5 L400,100 L0,100 Z" fill="url(#chartGradient)"></path>
+</svg>
+<div class="absolute inset-0 flex items-center justify-between px-2 pt-20">
+<span class="text-[10px] text-slate-400 font-bold uppercase">Mon</span>
+<span class="text-[10px] text-slate-400 font-bold uppercase">Wed</span>
+<span class="text-[10px] text-slate-400 font-bold uppercase">Fri</span>
+<span class="text-[10px] text-slate-400 font-bold uppercase">Sun</span>
+</div>
+</div>
+<div class="flex gap-4 items-center pt-2 border-t border-slate-100 dark:border-primary/10">
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-slate-400 opacity-40"></div>
+<span class="text-[10px] text-slate-400 dark:text-[#92c9a4] font-bold uppercase">Current Schedule</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-primary glow-sm"></div>
+<span class="text-[10px] text-primary font-bold uppercase">Optimized Path</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quest Tasks (Small List) -->
+<div class="px-4 py-6">
+<h3 class="text-slate-400 dark:text-[#92c9a4] text-xs font-bold uppercase tracking-widest mb-3">Pending Missions</h3>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-[#193322]/50 border border-slate-200 dark:border-primary/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span class="text-sm font-medium">Re-order Project Alpha meetings</span>
+</div>
+<span class="text-[10px] font-bold bg-primary/10 text-primary px-2 py-1 rounded">+120 XP</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-white dark:bg-[#193322]/50 border border-slate-200 dark:border-primary/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">circle</span>
+<span class="text-sm font-medium">Auto-archive low priority threads</span>
+</div>
+<span class="text-[10px] font-bold bg-primary/10 text-primary px-2 py-1 rounded">+50 XP</span>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom CTA -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-lg border-t border-slate-200 dark:border-primary/10">
+<button class="flex w-full items-center justify-center gap-3 rounded-xl h-14 bg-primary text-black font-black text-lg shadow-xl shadow-primary/20 glow-md active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined">auto_fix_high</span>
+                Apply All 4 Hacks
+            </button>
+<p class="text-center text-[10px] text-slate-400 dark:text-[#92c9a4] mt-2 font-medium">
+                Synchronizing with <b>Google Calendar</b>
+</p>
+</div>
+</div>
+</body></html>
