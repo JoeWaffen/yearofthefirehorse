@@ -63,7 +63,12 @@ def parse_ics_files():
 
     print(f"Extracted {len(all_events)} events.")
 
-    output_file = "schedule.json"
+    output_dir = "frontend"
+    if os.path.exists(output_dir):
+        output_file = os.path.join(output_dir, "schedule.json")
+    else:
+        output_file = "schedule.json"
+
     with open(output_file, 'w') as f:
         json.dump(all_events, f, cls=DateTimeEncoder, indent=2)
 
