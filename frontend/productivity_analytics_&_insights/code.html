@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Productivity Analytics &amp; Insights</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .xp-glow {
+            box-shadow: 0 0 15px rgba(19, 236, 91, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-white font-display min-h-screen pb-24">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 justify-between">
+<div class="flex items-center gap-3">
+<div class="relative">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="User profile avatar with green border" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBPbYVBkziuVR4miMfQTV6AOtLqE1chLowx5wyIs5lgiO22g62zBZPWgSDNCtAxYZBt7qvWXUOSIamgtgmIVWDd2-StFeuqy2XYora5rZYnZk56FGHFE0dWR5DaWnb6gVnczMlz4UsJfg0QxVHxrtm1bBU4F7DUAQ9a2qY75_j2FhfPPYxR2I0C_yiQS9ZSSaCif_UXZ2GX7qfGdDmrihHzBBm1Rie3U9UyKb7TT8X-tb98bRsK7wD_NStn8DtjTg6FG1Hz_nSSxNc");'></div>
+<div class="absolute -bottom-1 -right-1 bg-primary text-background-dark text-[10px] font-black px-1.5 py-0.5 rounded-full">LVL 42</div>
+</div>
+<div>
+<h2 class="text-white text-lg font-bold leading-none tracking-tight">Insights</h2>
+<p class="text-[#92c9a4] text-xs font-medium">Grandmaster Tactician</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex size-10 items-center justify-center rounded-full bg-white/5 text-white">
+<span class="material-symbols-outlined" style="font-size: 20px;">calendar_today</span>
+</button>
+<button class="flex size-10 items-center justify-center rounded-full bg-white/5 text-white">
+<span class="material-symbols-outlined" style="font-size: 20px;">share</span>
+</button>
+</div>
+</div>
+<!-- XP Progress Bar -->
+<div class="px-4 pb-2">
+<div class="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary xp-glow" style="width: 65%;"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="text-[10px] text-[#92c9a4] font-bold uppercase tracking-wider">XP Progress</span>
+<span class="text-[10px] text-primary font-bold">2,450 / 3,000 XP</span>
+</div>
+</div>
+<!-- Tabs -->
+<div class="px-4 border-b border-white/5">
+<div class="flex gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#92c9a4] pb-3 pt-4" href="#">
+<p class="text-sm font-bold tracking-wide">Day</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary text-white pb-3 pt-4" href="#">
+<p class="text-sm font-bold tracking-wide">Week</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#92c9a4] pb-3 pt-4" href="#">
+<p class="text-sm font-bold tracking-wide">Month</p>
+</a>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<main class="flex flex-col gap-6 p-4">
+<!-- Life Balance Radar Section -->
+<section class="glass-card rounded-xl p-5">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-white text-xl font-bold tracking-tight">Life Balance</h3>
+<p class="text-[#92c9a4] text-sm">Quest distribution</p>
+</div>
+<div class="bg-primary/10 px-3 py-1 rounded-full">
+<span class="text-primary text-xs font-bold">+12% vs last week</span>
+</div>
+</div>
+<div class="flex flex-col items-center py-4">
+<div class="relative w-full aspect-square max-w-[280px]">
+<!-- Simple SVG Radar Simulation -->
+<svg class="w-full h-full overflow-visible" viewbox="0 0 100 100">
+<!-- Grid Lines -->
+<polygon fill="none" points="50,5 95,37 78,90 22,90 5,37" stroke="white" stroke-opacity="0.1" stroke-width="0.5"></polygon>
+<polygon fill="none" points="50,20 80,42 68,75 32,75 20,42" stroke="white" stroke-opacity="0.1" stroke-width="0.5"></polygon>
+<polygon fill="none" points="50,35 65,46 60,62 40,62 35,46" stroke="white" stroke-opacity="0.1" stroke-width="0.5"></polygon>
+<!-- Axes -->
+<line stroke="white" stroke-opacity="0.1" stroke-width="0.5" x1="50" x2="50" y1="50" y2="5"></line>
+<line stroke="white" stroke-opacity="0.1" stroke-width="0.5" x1="50" x2="95" y1="50" y2="37"></line>
+<line stroke="white" stroke-opacity="0.1" stroke-width="0.5" x1="50" x2="78" y1="50" y2="90"></line>
+<line stroke="white" stroke-opacity="0.1" stroke-width="0.5" x1="50" x2="22" y1="50" y2="90"></line>
+<line stroke="white" stroke-opacity="0.1" stroke-width="0.5" x1="50" x2="5" y1="50" y2="37"></line>
+<!-- Data Polygon -->
+<polygon fill="rgba(19, 236, 91, 0.2)" points="50,15 85,40 70,80 30,75 15,30" stroke="#13ec5b" stroke-width="2"></polygon>
+</svg>
+<!-- Labels -->
+<span class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 text-[10px] font-bold text-white uppercase">Work</span>
+<span class="absolute top-[35%] right-0 translate-x-4 text-[10px] font-bold text-[#92c9a4] uppercase">Health</span>
+<span class="absolute bottom-0 right-[15%] translate-y-4 text-[10px] font-bold text-[#92c9a4] uppercase">Social</span>
+<span class="absolute bottom-0 left-[15%] translate-y-4 text-[10px] font-bold text-[#92c9a4] uppercase">Learn</span>
+<span class="absolute top-[35%] left-0 -translate-x-6 text-[10px] font-bold text-[#92c9a4] uppercase">Hobbies</span>
+</div>
+</div>
+</section>
+<!-- Focus vs Distracted Section -->
+<section class="glass-card rounded-xl p-5">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-white text-lg font-bold tracking-tight">Focus vs. Distracted</h3>
+<div class="flex gap-4">
+<div class="flex items-center gap-1.5">
+<div class="size-2 rounded-full bg-primary"></div>
+<span class="text-[10px] text-[#92c9a4] font-bold uppercase">Focus</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="size-2 rounded-full bg-white/20"></div>
+<span class="text-[10px] text-[#92c9a4] font-bold uppercase">Distracted</span>
+</div>
+</div>
+</div>
+<div class="flex items-end justify-between h-40 gap-2 mb-2">
+<!-- Bar 1 -->
+<div class="flex-1 flex flex-col justify-end gap-1 group">
+<div class="w-full bg-white/10 rounded-t-sm h-[30%]"></div>
+<div class="w-full bg-primary rounded-b-sm h-[50%]"></div>
+<span class="text-[10px] text-center text-[#92c9a4] font-bold mt-2">MON</span>
+</div>
+<!-- Bar 2 -->
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-white/10 rounded-t-sm h-[15%]"></div>
+<div class="w-full bg-primary rounded-b-sm h-[70%]"></div>
+<span class="text-[10px] text-center text-[#92c9a4] font-bold mt-2">TUE</span>
+</div>
+<!-- Bar 3 -->
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-white/10 rounded-t-sm h-[40%]"></div>
+<div class="w-full bg-primary rounded-b-sm h-[35%]"></div>
+<span class="text-[10px] text-center text-[#92c9a4] font-bold mt-2">WED</span>
+</div>
+<!-- Bar 4 -->
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-white/10 rounded-t-sm h-[10%]"></div>
+<div class="w-full bg-primary rounded-b-sm h-[85%]"></div>
+<span class="text-[10px] text-center text-white font-bold mt-2">THU</span>
+</div>
+<!-- Bar 5 -->
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-white/10 rounded-t-sm h-[20%]"></div>
+<div class="w-full bg-primary rounded-b-sm h-[60%]"></div>
+<span class="text-[10px] text-center text-[#92c9a4] font-bold mt-2">FRI</span>
+</div>
+<!-- Bar 6 -->
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-white/10 rounded-t-sm h-[5%]"></div>
+<div class="w-full bg-primary rounded-b-sm h-[15%]"></div>
+<span class="text-[10px] text-center text-[#92c9a4] font-bold mt-2">SAT</span>
+</div>
+<!-- Bar 7 -->
+<div class="flex-1 flex flex-col justify-end gap-1">
+<div class="w-full bg-white/10 rounded-t-sm h-[5%]"></div>
+<div class="w-full bg-primary rounded-b-sm h-[10%]"></div>
+<span class="text-[10px] text-center text-[#92c9a4] font-bold mt-2">SUN</span>
+</div>
+</div>
+</section>
+<!-- Efficiency Insights Section -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center gap-2 px-1">
+<span class="material-symbols-outlined text-primary">psychology</span>
+<h3 class="text-white text-lg font-bold tracking-tight">Efficiency Insights</h3>
+</div>
+<div class="flex flex-col gap-3">
+<div class="glass-card rounded-xl p-4 flex gap-4 items-start">
+<div class="size-10 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">wb_sunny</span>
+</div>
+<div>
+<p class="text-white text-sm font-semibold leading-snug">Morning Warrior</p>
+<p class="text-[#92c9a4] text-xs mt-1">You are <span class="text-primary font-bold">20% faster</span> at creative tasks before 11:00 AM.</p>
+</div>
+</div>
+<div class="glass-card rounded-xl p-4 flex gap-4 items-start">
+<div class="size-10 shrink-0 bg-red-500/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-red-400">warning</span>
+</div>
+<div>
+<p class="text-white text-sm font-semibold leading-snug">XP Penalty Alert</p>
+<p class="text-[#92c9a4] text-xs mt-1">Meeting-heavy days reduce your daily XP gain by <span class="text-red-400 font-bold">15%</span>.</p>
+</div>
+</div>
+<div class="glass-card rounded-xl p-4 flex gap-4 items-start">
+<div class="size-10 shrink-0 bg-primary/10 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">local_fire_department</span>
+</div>
+<div>
+<p class="text-white text-sm font-semibold leading-snug">Focus Streak</p>
+<p class="text-[#92c9a4] text-xs mt-1">4 consecutive days of <span class="text-primary font-bold">4+ hours</span> of deep work. Keep going!</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-white/5 pb-8 pt-3">
+<div class="flex justify-around items-center px-4">
+<a class="flex flex-col items-center gap-1 text-[#92c9a4]" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-bold">Quests</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="text-[10px] font-bold">Insights</span>
+</a>
+<div class="relative -top-6">
+<button class="bg-primary size-14 rounded-full flex items-center justify-center shadow-lg shadow-primary/20 text-background-dark">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'wght' 600;">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-[#92c9a4]" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-bold">Calendar</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#92c9a4]" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

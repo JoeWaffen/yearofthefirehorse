@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Real-Time Focus Duel Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec131e",
+                        "secondary": "#00d4ff",
+                        "background-light": "#f8f6f6",
+                        "background-dark": "#0a0505",
+                        "card-dark": "#1a0b0c",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .neon-red {
+            text-shadow: 0 0 10px #ec131e, 0 0 20px #ec131e;
+        }
+        .neon-blue {
+            text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff;
+        }
+        .glow-red {
+            box-shadow: 0 0 15px rgba(236, 19, 30, 0.4);
+        }
+        .glow-blue {
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white selection:bg-primary/30">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-[430px] mx-auto border-x border-white/5 shadow-2xl">
+<!-- Top App Bar -->
+<div class="flex items-center bg-transparent p-4 pb-2 justify-between z-10">
+<div class="text-white flex size-10 shrink-0 items-center justify-center rounded-full bg-white/5 cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<div class="flex flex-col items-center">
+<h2 class="text-white text-xs font-bold uppercase tracking-widest opacity-60">Quest Arena</h2>
+<h2 class="text-white text-lg font-bold leading-tight tracking-tight">Focus Duel</h2>
+</div>
+<div class="flex w-10 items-center justify-end">
+<div class="text-primary" data-icon="Trophy">
+<span class="material-symbols-outlined !text-3xl">military_tech</span>
+</div>
+</div>
+</div>
+<!-- Main Arena Content -->
+<div class="flex-1 overflow-y-auto px-4 py-2 space-y-6">
+<!-- Dual Profile Header (VS Mode) -->
+<div class="grid grid-cols-2 gap-4 relative mt-2">
+<!-- User Side -->
+<div class="flex flex-col items-center gap-3">
+<div class="relative">
+<div class="size-24 rounded-full border-2 border-secondary p-1 glow-blue">
+<div class="w-full h-full rounded-full bg-center bg-cover" data-alt="User profile avatar with blue focus glow" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8IvJMjYbNFmsgWrCNJulUltoq9ZHz6EnYdfIZmcQ1uwEcxBP6yTU3svU3U7q75QvplHABSwnI17pY-S1c9Q-tTujLCiWat8Nahch-Eyj7M4R4MpwTOHt0a9NTk2U22MWAPOxROPkmv38jfmmnKSjcdS1w2m-qmXOLGNL3pVI1F_r59-cDv7ATTKZTVr9FWWUeA8-bujUTc_QUsggGdssDt-CuBY0VkewTwiEyjHjnjKlJDP8LBkbG-xx_K2pXIuiQsoB_I7nckUk");'></div>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-secondary text-black text-[10px] font-black px-2 py-0.5 rounded-full uppercase">You</div>
+</div>
+<div class="text-center">
+<p class="text-white font-bold text-sm">Knight_99</p>
+<p class="text-secondary text-[10px] font-bold uppercase">Focus Shield Active</p>
+</div>
+</div>
+<!-- VS Divider -->
+<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+<div class="bg-background-dark border border-white/10 px-3 py-1 rounded-lg">
+<span class="text-primary font-black italic text-xl tracking-tighter">VS</span>
+</div>
+</div>
+<!-- Rival Side -->
+<div class="flex flex-col items-center gap-3">
+<div class="relative">
+<div class="size-24 rounded-full border-2 border-primary p-1 glow-red">
+<div class="w-full h-full rounded-full bg-center bg-cover" data-alt="Rival profile avatar with red focus glow" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsfjraBhe1QAnHjKdNSKW6UXNcfhplShNUwa6FJK6BapWgYejpoLS4BceG0PisGw5PobtfCl8XvqtuP0Xj6V2RGlcFsELWxMiicl5yPuvxtGlRH5cpxzZgDcJKU_w05ctdeX9scpG5Vu7_xXsvyzhEB0Sv-C6pdyW_McJOjycJ-H-Nj1FxtLoRNsSmNayIXxF9N_T5ogJKJORwMt4NFwqB7TjWSbFHZ5W88QXBo6eSv_zcsqsBFGxnJ49pXKXCF0TXku7iMjzLe7I");'></div>
+</div>
+<div class="absolute -bottom-1 -left-1 bg-primary text-white text-[10px] font-black px-2 py-0.5 rounded-full uppercase">Rival</div>
+</div>
+<div class="text-center">
+<p class="text-white font-bold text-sm">Shadow_Focus</p>
+<p class="text-primary text-[10px] font-bold uppercase">Losing Focus!</p>
+</div>
+</div>
+</div>
+<!-- Duel Timers -->
+<div class="grid grid-cols-2 gap-8 py-4 px-2">
+<!-- User Timer -->
+<div class="flex flex-col items-center gap-2">
+<div class="relative size-32 flex items-center justify-center">
+<svg class="absolute inset-0 size-full -rotate-90">
+<circle class="text-white/5" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-secondary drop-shadow-[0_0_8px_rgba(0,212,255,0.6)]" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364" stroke-dashoffset="40" stroke-width="8"></circle>
+</svg>
+<div class="text-center">
+<span class="text-2xl font-black neon-blue">24:12</span>
+<p class="text-[10px] uppercase font-bold text-secondary">88% Focus</p>
+</div>
+</div>
+</div>
+<!-- Rival Timer -->
+<div class="flex flex-col items-center gap-2">
+<div class="relative size-32 flex items-center justify-center">
+<svg class="absolute inset-0 size-full -rotate-90">
+<circle class="text-white/5" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary drop-shadow-[0_0_8px_rgba(236,19,30,0.6)]" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364" stroke-dashoffset="140" stroke-width="8"></circle>
+</svg>
+<div class="text-center">
+<span class="text-2xl font-black neon-red">18:45</span>
+<p class="text-[10px] uppercase font-bold text-primary">62% Focus</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Wager Section -->
+<div class="bg-card-dark border border-white/5 rounded-2xl p-4 flex items-center justify-between relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-secondary/5 to-primary/5"></div>
+<div class="relative z-10">
+<p class="text-white/40 text-[10px] font-bold uppercase tracking-wider">Duel Stakes</p>
+<div class="flex items-center gap-3 mt-1">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-lg">monetization_on</span>
+<span class="font-bold text-sm">250 Gold</span>
+</div>
+<div class="h-3 w-px bg-white/10"></div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-purple-500 text-lg">bolt</span>
+<span class="font-bold text-sm">1,200 XP</span>
+</div>
+</div>
+</div>
+<div class="relative z-10 text-right">
+<p class="text-white/40 text-[10px] font-bold uppercase tracking-wider">Current Lead</p>
+<p class="text-secondary font-black italic">YOU (+14%)</p>
+</div>
+</div>
+<!-- Combat Log -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2 px-1">
+<span class="material-symbols-outlined text-white/40 text-sm">history</span>
+<h4 class="text-white/40 text-[10px] font-bold uppercase tracking-widest">Combat Log</h4>
+<div class="h-px flex-1 bg-white/5"></div>
+</div>
+<div class="space-y-2 max-h-40 overflow-hidden relative">
+<div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-background-dark to-transparent z-10"></div>
+<div class="flex items-start gap-3 bg-white/5 p-3 rounded-xl border-l-2 border-primary">
+<span class="material-symbols-outlined text-primary text-lg">warning</span>
+<div class="flex-1">
+<p class="text-xs font-bold">Rival picked up their phone!</p>
+<p class="text-[10px] text-white/40">2 minutes ago</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-white/5 p-3 rounded-xl border-l-2 border-secondary">
+<span class="material-symbols-outlined text-secondary text-lg">shield</span>
+<div class="flex-1">
+<p class="text-xs font-bold">You activated "Deep Work Shield"</p>
+<p class="text-[10px] text-white/40">4 minutes ago</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-white/5 p-3 rounded-xl border-l-2 border-primary opacity-50">
+<span class="material-symbols-outlined text-white/60 text-lg">remove_circle</span>
+<div class="flex-1">
+<p class="text-xs font-bold">Rival lost focus for 32 seconds</p>
+<p class="text-[10px] text-white/40">8 minutes ago</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Dock -->
+<div class="p-6 pt-2 bg-gradient-to-t from-background-dark via-background-dark to-transparent">
+<div class="flex flex-col gap-3">
+<button class="w-full bg-secondary text-black font-black py-4 rounded-xl flex items-center justify-center gap-2 glow-blue uppercase tracking-widest active:scale-95 transition-transform">
+<span class="material-symbols-outlined">timer</span>
+                    Focus Now
+                </button>
+<div class="flex gap-3">
+<button class="flex-1 bg-white/5 border border-white/10 text-white/60 font-bold py-3 rounded-xl text-sm uppercase tracking-wider active:scale-95 transition-transform">
+                        Settings
+                    </button>
+<button class="flex-1 bg-primary/10 border border-primary/30 text-primary font-bold py-3 rounded-xl text-sm uppercase tracking-wider active:scale-95 transition-transform">
+                        Concede
+                    </button>
+</div>
+</div>
+<!-- iOS Home Indicator Spacing -->
+<div class="h-4"></div>
+</div>
+</div>
+</body></html>
