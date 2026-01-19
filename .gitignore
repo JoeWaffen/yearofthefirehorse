@@ -1,0 +1,5 @@
+*.ics
+schedule.json
+frontend/schedule.json
+__pycache__/
+*.zip

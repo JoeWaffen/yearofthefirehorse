@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding: Calendar Sync</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec80",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102219",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Pulse effect for the primary button */
+        .pulse-glow {
+            box-shadow: 0 0 0 0 rgba(19, 236, 128, 0.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(19, 236, 128, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(19, 236, 128, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(19, 236, 128, 0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between">
+<div class="text-gray-900 dark:text-white flex size-12 shrink-0 items-center justify-start">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back_ios_new</span>
+</div>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Onboarding</h2>
+</div>
+<!-- Progress Indicators -->
+<div class="flex w-full flex-row items-center justify-center gap-3 py-4">
+<div class="h-2 w-8 rounded-full bg-primary"></div>
+<div class="h-2 w-2 rounded-full bg-primary/20 dark:bg-[#32674d]"></div>
+<div class="h-2 w-2 rounded-full bg-primary/20 dark:bg-[#32674d]"></div>
+</div>
+<!-- HeaderImage (Hero Section) -->
+<div class="@container px-4 py-2">
+<div class="bg-cover bg-center flex flex-col justify-end overflow-hidden bg-gray-200 dark:bg-[#11221a] rounded-xl min-h-[340px] border border-primary/10 shadow-2xl shadow-primary/5" data-alt="Mystical calendar interface with floating fantasy icons" style='background-image: linear-gradient(to top, rgba(16, 34, 25, 0.9) 0%, rgba(16, 34, 25, 0.2) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQsTqqLvSxR7WVdhGLW0kxV-JE81R4-etFcjn5sG1nL1jTAzIRJwikwvUQhIMQXY2mas3Hn4A8YrJo5Oyf2oaLocq7P0d2mUh7v48NRGICUCLt7Y917tFMXC7RpIiZ8gkNhcK6jLAuUhPuuZ95MEXJzwp3GJ2dJryo98DVJQnVOYWKNHLM8Man8uV-8OPLBzoOLpB0uQ4W6uJAPCMsamgeQ8_COax46qx3sbIOtMAuBOrAxls5eivdMXqxiH9EMSZu2NBSgMUrEcI");'>
+<div class="flex flex-col p-6 gap-2">
+<span class="text-primary text-sm font-bold tracking-widest uppercase">Phase One</span>
+<p class="text-white tracking-tight text-[32px] font-bold leading-tight">Sync Your World</p>
+</div>
+</div>
+</div>
+<!-- BodyText -->
+<div class="px-6 py-4">
+<p class="text-gray-600 dark:text-gray-300 text-base font-normal leading-relaxed text-center">
+                Your schedule is your map. Your tasks are your quests. Connect your calendar to begin your journey and turn time into experience points.
+            </p>
+</div>
+<!-- ImageGrid / Feature Cards -->
+<div class="grid grid-cols-2 gap-4 p-4">
+<div class="flex flex-col gap-3 p-4 bg-white/50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" style="font-size: 28px;">swords</span>
+</div>
+<div>
+<p class="text-gray-900 dark:text-white text-base font-bold leading-tight">Events to Quests</p>
+<p class="text-gray-500 dark:text-[#92c9ad] text-xs font-normal leading-snug mt-1">Meetings become epic boss battles</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-4 bg-white/50 dark:bg-white/5 rounded-xl border border-gray-200 dark:border-white/10">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary" style="font-size: 28px;">bolt</span>
+</div>
+<div>
+<p class="text-gray-900 dark:text-white text-base font-bold leading-tight">Time to XP</p>
+<p class="text-gray-500 dark:text-[#92c9ad] text-xs font-normal leading-snug mt-1">Deep work earns rare rewards</p>
+</div>
+</div>
+</div>
+<!-- Main Action Section -->
+<div class="mt-auto flex flex-col gap-4 p-6">
+<button class="pulse-glow flex w-full items-center justify-center gap-3 rounded-full bg-primary py-4 px-6 text-background-dark font-bold text-lg transition-transform active:scale-95">
+<img alt="Google Calendar" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb9fC-0QKqpOHIMXjeNHiEu5WD8uOF-ddOLe0gr2zgV9MkJOzBVSxgen4klZSNEqcDEZnHUcZVM6sWldZWMJ2z1bl42rPvthSHM6xKtJ4nNamv4afxD9spg99aATs0LjzxuHvJN7EvTxrD2K9XRk4CuhEa3A4RyBBfe0UYZjOKcEhD7Rq_x1en7YAfuN9mcAMFcBfB9E8wN5W8oAEJdTLF23HiHvLhoD5Faf93_rbX6mfOKA-caekHpHPKcOpy7tGVn2qGIUkRNCw"/>
+                Connect Google Calendar
+            </button>
+<button class="w-full py-2 text-gray-500 dark:text-gray-400 font-medium text-sm hover:text-primary dark:hover:text-primary transition-colors">
+                Skip for now
+            </button>
+<!-- Trust Badge -->
+<div class="flex items-center justify-center gap-2 pt-2 opacity-60">
+<span class="material-symbols-outlined" style="font-size: 16px;">lock</span>
+<p class="text-[10px] uppercase tracking-widest font-bold">Secure &amp; Encrypted Sync</p>
+</div>
+</div>
+<!-- Padding for iOS bottom bar -->
+<div class="h-8"></div>
+</div>
+</body></html>
