@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inventory &amp; Rewards Shop</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#11d452",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "card-dark": "#1a3322",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
+<!-- Top Navigation Bar -->
+<div class="fixed top-0 left-0 right-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-white/10">
+<div class="flex items-center p-4 justify-between max-w-md mx-auto">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-3xl">shield_person</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight flex-1 text-center">Quest Inventory</h2>
+<div class="flex w-10 items-center justify-end">
+<span class="material-symbols-outlined text-primary cursor-pointer">help_outline</span>
+</div>
+</div>
+</div>
+<!-- Main Content Container -->
+<main class="max-w-md mx-auto pt-20 pb-24 px-4">
+<!-- Currency Stats -->
+<div class="flex flex-wrap gap-4 py-4">
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-4 bg-white dark:bg-card-dark shadow-sm border border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-xl">monetization_on</span>
+<p class="text-xs font-bold uppercase tracking-wider opacity-80">Gold</p>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="text-2xl font-bold leading-tight">1,250</p>
+<p class="text-primary text-xs font-bold">+150 Today</p>
+</div>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-1 rounded-xl p-4 bg-white dark:bg-card-dark shadow-sm border border-gray-100 dark:border-white/5">
+<div class="flex items-center gap-2 text-cyan-400">
+<span class="material-symbols-outlined text-xl">diamond</span>
+<p class="text-xs font-bold uppercase tracking-wider opacity-80">Gems</p>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="text-2xl font-bold leading-tight">45</p>
+<p class="text-cyan-400 text-xs font-bold">+5 Streak</p>
+</div>
+</div>
+</div>
+<!-- Tabs -->
+<div class="sticky top-[72px] z-40 bg-background-light dark:bg-background-dark py-2">
+<div class="flex border-b border-gray-200 dark:border-white/10">
+<a class="flex flex-col items-center justify-center border-b-2 border-primary text-slate-900 dark:text-white pb-3 pt-2 flex-1 font-bold text-sm" href="#">
+                    My Inventory
+                </a>
+<a class="flex flex-col items-center justify-center border-b-2 border-transparent text-slate-400 dark:text-gray-500 pb-3 pt-2 flex-1 font-bold text-sm" href="#">
+                    Rewards Shop
+                </a>
+</div>
+</div>
+<!-- Potions & Boosts Section -->
+<div class="mt-4">
+<div class="flex justify-between items-center px-1">
+<h3 class="text-lg font-bold leading-tight tracking-tight py-4">Potions &amp; Boosts</h3>
+<span class="text-xs text-primary font-bold uppercase tracking-widest">Active (2)</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<!-- Potion Card 1 -->
+<div class="relative group overflow-hidden rounded-xl bg-white dark:bg-card-dark border border-gray-100 dark:border-white/5 shadow-sm">
+<div class="aspect-square bg-cover bg-center flex items-end p-3" data-alt="Glowing green focus potion in a glass bottle" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBrJfAmgEoM_Tl0kRc-VTQMyiKCwQPRHGfuAdl6giPtddktq8Nm7w_k1vO2_2bxpcc-lVB5Jbg4Hc-qwASEDN50JdGXBTVNbuCGtjj7pJHdewJK9t9tDw4fxpwOUkAq205b6xDeK9DGh1l36prijAvBIo-bgdz-Ff7bZbtRBazfaNdFdYBrRU1cilUwBxqccPaRnGcEvw7sVXsKzRIcThvzqlRRZQf1hdJE73zEMeciS-zEtgI_S8FOKHfT0btD161uCmkxN808sWw");'>
+<div class="w-full">
+<p class="text-white text-sm font-bold">Focus Potion</p>
+<p class="text-primary text-[10px] font-bold">2X PRODUCTIVITY</p>
+</div>
+</div>
+<div class="absolute top-2 right-2 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full">x3</div>
+</div>
+<!-- Potion Card 2 -->
+<div class="relative group overflow-hidden rounded-xl bg-white dark:bg-card-dark border border-gray-100 dark:border-white/5 shadow-sm">
+<div class="aspect-square bg-cover bg-center flex items-end p-3" data-alt="Ancient wooden shield glowing with golden light" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDoeY1WtdOsWiIg65DMeXN49MNu9ygYU1BV3SBbiPtUEzZU15E3N4ROKrb20oGLi_j7NvHI67l_KuRzDmhHOxX3KfCUGF9XgWJRACVqtWjvYWmk77s-xjG3XjEREYr_9kYTlN2YU5wlefl4kf1nIuZUiwMJM1DWUCo0IyxpjzwL7-SWLONnZdEwaQYMCaJRD5ISaPnjJ66Fa6Ygq-QHYb5NKHq5CSPbCVEdcFHTaqG6gZV4Y2Z3mwJLlvyqDixxdsoF9HSwuUm34nU");'>
+<div class="w-full">
+<p class="text-white text-sm font-bold">Streak Shield</p>
+<p class="text-cyan-400 text-[10px] font-bold">24H PROTECTION</p>
+</div>
+</div>
+<div class="absolute top-2 right-2 bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-full">x1</div>
+</div>
+</div>
+</div>
+<!-- Rare Gear Section -->
+<div class="mt-8">
+<h3 class="text-lg font-bold leading-tight tracking-tight px-1 py-4">Rare Gear</h3>
+<div class="grid grid-cols-3 gap-3">
+<div class="flex flex-col gap-2">
+<div class="aspect-square rounded-xl bg-white dark:bg-card-dark border-2 border-primary/50 flex items-center justify-center" data-alt="Abstract emerald cloak icon">
+<span class="material-symbols-outlined text-primary text-4xl">hide</span>
+</div>
+<p class="text-[11px] font-bold text-center truncate">Emerald Cloak</p>
+</div>
+<div class="flex flex-col gap-2 opacity-50">
+<div class="aspect-square rounded-xl bg-white dark:bg-card-dark border border-gray-100 dark:border-white/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-400 text-4xl">swords</span>
+</div>
+<p class="text-[11px] font-bold text-center truncate">Focus Blade</p>
+</div>
+<div class="flex flex-col gap-2">
+<div class="aspect-square rounded-xl bg-white dark:bg-card-dark border border-gray-100 dark:border-white/5 flex items-center justify-center">
+<span class="material-symbols-outlined text-amber-400 text-4xl">auto_awesome</span>
+</div>
+<p class="text-[11px] font-bold text-center truncate">Mana Amulet</p>
+</div>
+</div>
+</div>
+<!-- Shop Preview Section -->
+<div class="mt-8 mb-8">
+<div class="flex justify-between items-center px-1 mb-4">
+<h3 class="text-lg font-bold leading-tight tracking-tight">Rewards Shop</h3>
+<span class="text-sm font-bold text-primary">View All</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Shop Item 1 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-card-dark border border-gray-100 dark:border-white/5 shadow-sm">
+<div class="size-14 rounded-lg bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-3xl">timer</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm">15 Min Power Break</h4>
+<p class="text-xs opacity-60">Redeem for instant rest</p>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-background-dark font-bold text-xs px-4 py-2 rounded-full flex items-center gap-1">
+                        50 <span class="material-symbols-outlined text-xs">monetization_on</span>
+</button>
+</div>
+<!-- Shop Item 2 -->
+<div class="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-card-dark border border-gray-100 dark:border-white/5 shadow-sm">
+<div class="size-14 rounded-lg bg-cyan-400/10 flex items-center justify-center text-cyan-400 shrink-0">
+<span class="material-symbols-outlined text-3xl">coffee</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-sm">Treat Yourself</h4>
+<p class="text-xs opacity-60">Real-world snack coupon</p>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-background-dark font-bold text-xs px-4 py-2 rounded-full flex items-center gap-1">
+                        500 <span class="material-symbols-outlined text-xs">monetization_on</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-gray-200 dark:border-white/10 pb-8 pt-2 z-50">
+<div class="max-w-md mx-auto flex justify-around items-center px-6">
+<div class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-2xl">calendar_month</span>
+<span class="text-[10px] font-bold">Quests</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-2xl">insights</span>
+<span class="text-[10px] font-bold">Analytics</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-2xl">inventory_2</span>
+<span class="text-[10px] font-bold">Inventory</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-[10px] font-bold">Avatar</span>
+</div>
+</div>
+</nav>
+</body></html>

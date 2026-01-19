@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding: Choose Your Class</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#eebd2b",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221d10",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .class-card-selected {
+            box-shadow: 0 0 20px rgba(238, 189, 43, 0.4);
+            border: 2px solid #eebd2b;
+        }
+        .class-card-normal {
+            border: 2px solid transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-900 dark:text-white min-h-screen flex flex-col">
+<!-- Progress Indicator Wrapper -->
+<div class="pt-6">
+<div class="flex w-full flex-row items-center justify-center gap-3 py-2">
+<div class="h-1.5 w-8 rounded-full bg-primary/30"></div>
+<div class="h-1.5 w-8 rounded-full bg-primary"></div>
+<div class="h-1.5 w-8 rounded-full bg-primary/30"></div>
+<div class="h-1.5 w-8 rounded-full bg-primary/30"></div>
+</div>
+</div>
+<!-- Header Section -->
+<div class="px-6 py-4">
+<h1 class="text-white tracking-tight text-[32px] font-bold leading-tight text-center">Choose Your Class</h1>
+<p class="text-white/70 text-base font-normal leading-normal pt-2 px-4 text-center">
+            Your class determines your avatar's look and your starting skill tree. Choose your path.
+        </p>
+</div>
+<!-- Cards Container -->
+<div class="flex-1 px-4 pb-32 space-y-4 overflow-y-auto">
+<!-- The Architect (Selected State) -->
+<div class="class-card-selected flex flex-col items-stretch justify-start rounded-xl shadow-lg bg-[#332d19] overflow-hidden relative group">
+<div class="absolute top-3 right-3 bg-primary text-background-dark rounded-full p-1 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div class="w-full bg-center bg-no-repeat aspect-[16/7] bg-cover" data-alt="Digital illustration of a futuristic workspace with blueprints" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAytJiHLkhxs8wev0nF6ajswQx8LbvCnSEXZWroaAnlAMWyQfOKx7zpicLEHiukP8ujMlAtNyvtDdmClJZmCNMmZpwQqHFtA1ckYRYBWT3Jbj2w458GrA0qAjIFFqZ9doVbj1BYfTO1yn0NmV4JEQf9WzLSfjpmGkaQY-1h7csCmw4LOSvfT4xCxfHCBnFrHUa1TGU_pnJqPis17-tyzt7w22KazCeWnsT2jrptMX8TBdXY46KddHzuOLbgMjA2mN4jfzzWQIClb9Y");'>
+</div>
+<div class="flex w-full grow flex-col items-stretch justify-center gap-1 p-5">
+<div class="flex justify-between items-center">
+<p class="text-primary text-xs font-bold tracking-widest uppercase">STRATEGIST</p>
+<span class="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full">+10% XP</span>
+</div>
+<p class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">The Architect</p>
+<div class="flex flex-col gap-1 mt-1">
+<p class="text-white/80 text-sm font-normal leading-relaxed">Focus on planning and deep work.</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-primary text-lg">bolt</span>
+<p class="text-primary text-sm font-medium">Bonus: +10% XP for focus sessions</p>
+</div>
+</div>
+</div>
+</div>
+<!-- The Athlete -->
+<div class="class-card-normal flex flex-col items-stretch justify-start rounded-xl shadow-md bg-[#2a2514] hover:bg-[#332d19] transition-colors overflow-hidden">
+<div class="w-full bg-center bg-no-repeat aspect-[16/7] bg-cover opacity-80" data-alt="Athletic runner in a dark high-tech training facility" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA6pT39_TeeLKJy9gX7HnFl2sxKDHnBQMsyUrgFtC4ofExDPumked1kBR74JE4bk6E5Na_7VkxKXPk-YTRczgWCWTvMtQRElIjgESpukPm4VaKKXH-M8VDvLO7xtXpWv8NpFMXWTBUUDt5gJNFJQGwIj0vTtSVMi2vWScqx3_O66RJg5kWwV4zsp8pdFqwgBT7S1NM1lX9_k2ZSknbaPFOu-pG8awO3zj68PdWBbD1_bUaMAfZ3oHBAG5IKxZBZDObS55sOdzO8TBo");'>
+</div>
+<div class="flex w-full grow flex-col items-stretch justify-center gap-1 p-5">
+<div class="flex justify-between items-center">
+<p class="text-white/50 text-xs font-bold tracking-widest uppercase">POWER</p>
+<span class="bg-white/10 text-white/50 text-[10px] font-bold px-2 py-0.5 rounded-full">+10% XP</span>
+</div>
+<p class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">The Athlete</p>
+<div class="flex flex-col gap-1 mt-1">
+<p class="text-white/60 text-sm font-normal leading-relaxed">Focus on fitness and physical energy.</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-white/40 text-lg">fitness_center</span>
+<p class="text-white/60 text-sm font-medium">Bonus: +10% XP for physical habits</p>
+</div>
+</div>
+</div>
+</div>
+<!-- The Polymath -->
+<div class="class-card-normal flex flex-col items-stretch justify-start rounded-xl shadow-md bg-[#2a2514] hover:bg-[#332d19] transition-colors overflow-hidden">
+<div class="w-full bg-center bg-no-repeat aspect-[16/7] bg-cover opacity-80" data-alt="Abstract library with glowing geometric shapes and books" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkARrW0rrd0HXZ9DG4hWM57GkpPt1Ecv1Q8ODsO_bu5nQMsFhWZZXX9R6p_PATuUS-rTT-7nHIYgcVLUxjaWjb0UUyDxFnDLWfs2oFVRNJ0tDf_tGJXgBiKObuW1E9wOB9L58xE90laiQsWUjwIz3kwpT12tQueCS8Z2uDZuxWCwBx0Werln8lHjbyLCKlAXdc7t8UVsDwmPHDr0euL6BH0Y4l2ROJ2youyQVrZjZXYtOBgauVIUd2L5pmF8tTqOqieYgxN21w9ao");'>
+</div>
+<div class="flex w-full grow flex-col items-stretch justify-center gap-1 p-5">
+<div class="flex justify-between items-center">
+<p class="text-white/50 text-xs font-bold tracking-widest uppercase">BALANCE</p>
+<span class="bg-white/10 text-white/50 text-[10px] font-bold px-2 py-0.5 rounded-full">+5% XP</span>
+</div>
+<p class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">The Polymath</p>
+<div class="flex flex-col gap-1 mt-1">
+<p class="text-white/60 text-sm font-normal leading-relaxed">Balanced growth across all disciplines.</p>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-white/40 text-lg">auto_fix_high</span>
+<p class="text-white/60 text-sm font-medium">Bonus: +5% XP for all quest types</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Fixed Footer CTA -->
+<div class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-dark via-background-dark/95 to-transparent">
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-4 rounded-xl transition-all transform active:scale-[0.98] shadow-lg shadow-primary/20">
+            Confirm Selection
+        </button>
+<p class="text-white/40 text-[11px] text-center mt-3 uppercase tracking-widest">
+            You can modify your skill tree later in settings
+        </p>
+</div>
+</body></html>
