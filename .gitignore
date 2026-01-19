@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.ics
+frontend/schedule.json
+stitch_gamify_ical_schedule/
+stitch_gamify_ical_schedule.zip
