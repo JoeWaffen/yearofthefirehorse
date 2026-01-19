@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quick Add Quest Widget</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4c025",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#121212",
+                        "widget-dark": "rgba(34, 30, 16, 0.85)",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-effect {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gold-glow {
+            box-shadow: 0 0 15px rgba(244, 192, 37, 0.4);
+        }
+        .quest-card {
+            background: linear-gradient(145deg, rgba(52, 45, 24, 0.9) 0%, rgba(34, 30, 16, 0.95) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex items-center justify-center p-4">
+<!-- iOS Style Widget Container -->
+<div class="w-full max-w-[360px] quest-card glass-effect rounded-2xl overflow-hidden p-5 shadow-2xl border border-white/5">
+<!-- TopAppBar Style Header -->
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<div class="text-primary material-symbols-outlined text-[20px]">calendar_today</div>
+<div class="flex flex-col">
+<span class="text-white/40 text-[10px] uppercase font-bold tracking-wider leading-none">Up Next</span>
+<h2 class="text-white text-sm font-semibold leading-tight truncate max-w-[150px]">2pm Strategy Meeting</h2>
+</div>
+</div>
+<div class="bg-primary/10 border border-primary/20 px-2 py-1 rounded-lg">
+<p class="text-primary text-[11px] font-bold tracking-tighter shrink-0">LVL 14</p>
+</div>
+</div>
+<!-- Quest Input -->
+<div class="relative mb-4">
+<input class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-white/30 text-sm focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all" placeholder="Enter a new quest..." type="text"/>
+</div>
+<!-- Quest Type Section -->
+<div class="mb-5">
+<h4 class="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-3 px-1">Quest Type</h4>
+<div class="grid grid-cols-3 gap-3">
+<!-- Work -->
+<button class="flex flex-col items-center gap-1.5 py-3 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 transition-all group">
+<span class="material-symbols-outlined text-white/60 group-hover:text-primary transition-colors">swords</span>
+<span class="text-white/60 text-[11px] font-medium group-hover:text-white transition-colors">Work</span>
+</button>
+<!-- Health -->
+<button class="flex flex-col items-center gap-1.5 py-3 rounded-xl bg-primary/20 border border-primary/30 transition-all">
+<span class="material-symbols-outlined text-primary">favorite</span>
+<span class="text-white text-[11px] font-medium">Health</span>
+</button>
+<!-- Learning -->
+<button class="flex flex-col items-center gap-1.5 py-3 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20 transition-all group">
+<span class="material-symbols-outlined text-white/60 group-hover:text-primary transition-colors">menu_book</span>
+<span class="text-white/60 text-[11px] font-medium group-hover:text-white transition-colors">Learning</span>
+</button>
+</div>
+</div>
+<!-- Difficulty Section -->
+<div class="flex items-center justify-between mb-6 px-1">
+<h4 class="text-white/40 text-[10px] font-bold uppercase tracking-widest">Difficulty</h4>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-primary text-[18px] fill-1">star</span>
+<span class="material-symbols-outlined text-primary text-[18px] fill-1">star</span>
+<span class="material-symbols-outlined text-primary text-[18px] fill-1">star</span>
+<span class="material-symbols-outlined text-white/20 text-[18px]">star</span>
+<span class="material-symbols-outlined text-white/20 text-[18px]">star</span>
+</div>
+</div>
+<!-- Add Button -->
+<div class="flex justify-center -mb-2">
+<button class="bg-primary hover:bg-primary/90 text-background-dark h-14 w-14 rounded-full flex items-center justify-center transition-transform active:scale-95 gold-glow">
+<span class="material-symbols-outlined text-3xl font-bold">add</span>
+</button>
+</div>
+</div>
+<!-- UI Background Decoration (Simulating an iOS Home Screen) -->
+<div class="fixed inset-0 -z-10 bg-cover bg-center opacity-40 grayscale" data-alt="Abstract dark aesthetic wallpaper background" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuApi4xE1sfJIRq7ywqjbOP-WqR_yEqEDwysyVXafk2CQ8wegveh4Ptyid68EreWebQAy2hbDQaCY6CA2-tB0yymim7__irr0HfbaqTcRenlb-4QGyLdbvfCHSviIZPzV1V2qk6EYnfksiOSdLnuRkXuiIGhXP9JmdRkhQlBqLIcaeEEP5UqoRw2JZwpSlXHscqrx8CTUhnRJ8Ise40Unea8ymiigdX2KylrLaWjbJKscxG1SpYoqWe9kp81RdaGnCEEEk4E6W_FkGs');"></div>
+<div class="fixed inset-0 -z-20 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>
+</body></html>
